@@ -1,0 +1,21 @@
+territory_id,territory_name,region,state_coverage,assigned_rep_count,target_hcp_count,annual_quota
+TER-01,Maharashtra,West,Maharashtra,3,36,12374540.12
+TER-02,Delhi,North,"Delhi, Haryana",3,31,11450714.31
+TER-03,Karnataka,South,Karnataka,3,33,10031993.94
+TER-04,Tamil Nadu,South,Tamil Nadu,3,29,9598658.48
+TER-05,Gujarat,West,Gujarat,2,27,7856018.64
+TER-06,Telangana,South,Telangana,3,14,6155994.52
+TER-07,West Bengal,East,West Bengal,2,20,6558083.61
+TER-08,Rajasthan,North,Rajasthan,2,28,7166176.15
+TER-09,Punjab,North,Punjab,3,23,6301115.01
+TER-10,Kerala,South,Kerala,2,32,7708072.58
+TER-11,Uttar Pradesh,North,Uttar Pradesh,2,22,7320584.49
+TER-12,Haryana,North,Haryana,2,21,5969909.85
+TER-13,Madhya Pradesh,Central,Madhya Pradesh,2,26,6132442.64
+TER-14,Bihar,East,Bihar,3,24,4712339.11
+TER-15,Odisha,East,Odisha,2,29,4481824.97
+TER-16,Andhra Pradesh,South,Andhra Pradesh,3,20,5683404.51
+TER-17,Chhattisgarh,Central,Chhattisgarh,3,19,4004242.24
+TER-18,Jharkhand,East,Jharkhand,2,23,4524756.43
+TER-19,Assam,East,Assam,2,22,3731945.02
+TER-20,Uttarakhand,North,Uttarakhand,3,21,3791229.14

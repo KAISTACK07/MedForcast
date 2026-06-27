@@ -1,0 +1,257 @@
+-- ============================================================================
+-- PHARMA ANALYTICS — ALL DAX MEASURES
+-- ============================================================================
+-- Copy-paste these into Power BI Desktop → Modeling → New Measure
+-- Organized by dashboard page
+-- ============================================================================
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- SHARED MEASURES (Used across multiple pages)
+-- ════════════════════════════════════════════════════════════════════════════
+
+Total Revenue = SUM(pharma_sales[revenue])
+
+Total Units Sold = SUM(pharma_sales[units_sold])
+
+Avg Transaction = AVERAGE(pharma_sales[revenue])
+
+Active Territories = DISTINCTCOUNT(pharma_sales[territory_id])
+
+Active Brands = DISTINCTCOUNT(pharma_sales[drug_name])
+
+Sales Transactions = COUNTROWS(pharma_sales)
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 1: EXECUTIVE SUMMARY
+-- ════════════════════════════════════════════════════════════════════════════
+
+-- ⚠️ IMPORTANT: Mark DimDate as a "Date Table" first!
+-- Right-click DimDate → Mark as date table → Select Date column
+
+Revenue MoM % = 
+DIVIDE(
+    [Total Revenue] - CALCULATE([Total Revenue], DATEADD(DimDate[Date], -1, MONTH)),
+    CALCULATE([Total Revenue], DATEADD(DimDate[Date], -1, MONTH)),
+    0
+)
+
+Brand Share % = 
+DIVIDE(
+    [Total Revenue], 
+    CALCULATE([Total Revenue], ALL(pharma_sales[drug_name])),
+    0
+)
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 2: TERRITORY PERFORMANCE
+-- ════════════════════════════════════════════════════════════════════════════
+
+Total Rx Value = SUM(prescriptions[total_value])
+
+Rx Value per HCP = 
+DIVIDE(
+    SUM(prescriptions[total_value]), 
+    DISTINCTCOUNT(hcp_master[hcp_id]),
+    0
+)
+
+-- ⚠️ DO NOT use territories[target_hcp_count] as denominator
+Target Penetration % = 
+DIVIDE(
+    DISTINCTCOUNT(rep_activity[hcp_id]), 
+    DISTINCTCOUNT(hcp_master[hcp_id]),
+    0
+)
+
+Total Prescription Count = COUNTROWS(prescriptions)
+
+HCP Count = DISTINCTCOUNT(hcp_master[hcp_id])
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 3: HCP INTELLIGENCE
+-- ════════════════════════════════════════════════════════════════════════════
+-- Requires: hcp_segments table loaded from data/output/hcp_segments.csv
+
+HCP Count by Segment = 
+DISTINCTCOUNT(hcp_segments[hcp_id])
+
+Revenue Contribution % = 
+DIVIDE(
+    SUM(hcp_segments[monetary]), 
+    CALCULATE(SUM(hcp_segments[monetary]), ALL(hcp_segments)),
+    0
+)
+
+Avg Frequency = AVERAGE(hcp_segments[frequency])
+
+Avg Recency = AVERAGE(hcp_segments[recency])
+
+Avg Monetary = AVERAGE(hcp_segments[monetary])
+
+Champions Count = 
+CALCULATE(
+    DISTINCTCOUNT(hcp_segments[hcp_id]), 
+    hcp_segments[segment] = "Champions"
+)
+
+At Risk Count = 
+CALCULATE(
+    DISTINCTCOUNT(hcp_segments[hcp_id]), 
+    hcp_segments[segment] = "At Risk"
+)
+
+Champion Revenue % = 
+DIVIDE(
+    CALCULATE(SUM(hcp_segments[monetary]), hcp_segments[segment] = "Champions"),
+    CALCULATE(SUM(hcp_segments[monetary]), ALL(hcp_segments)),
+    0
+)
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 4: REP PRODUCTIVITY
+-- ════════════════════════════════════════════════════════════════════════════
+
+Total Reps = DISTINCTCOUNT(rep_activity[rep_id])
+
+Total Activities = COUNTROWS(rep_activity)
+
+Positive Outcome Rate % = 
+DIVIDE(
+    CALCULATE(COUNTROWS(rep_activity), rep_activity[outcome] = "Positive"), 
+    COUNTROWS(rep_activity),
+    0
+)
+
+Avg Duration = AVERAGE(rep_activity[duration_minutes])
+
+Unique HCPs Touched = DISTINCTCOUNT(rep_activity[hcp_id])
+
+Total Visits = 
+CALCULATE(
+    COUNTROWS(rep_activity), 
+    rep_activity[activity_type] = "Visit"
+)
+
+Total Phone Calls = 
+CALCULATE(
+    COUNTROWS(rep_activity), 
+    rep_activity[activity_type] = "Phone Call"
+)
+
+Total Virtual Meetings = 
+CALCULATE(
+    COUNTROWS(rep_activity), 
+    rep_activity[activity_type] = "Virtual Meeting"
+)
+
+Total Sample Drops = 
+CALCULATE(
+    COUNTROWS(rep_activity), 
+    rep_activity[activity_type] = "Sample Drop"
+)
+
+Total Samples Distributed = 
+CALCULATE(
+    SUM('public rep_activity'[samples_left]), 
+    'public rep_activity'[activity_type] = "Sample Drop"
+)
+
+Positive Sample Outcome Rate % = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('public rep_activity'), 
+        'public rep_activity'[outcome] = "Positive",
+        'public rep_activity'[activity_type] = "Sample Drop"
+    ),
+    CALCULATE(
+        COUNTROWS('public rep_activity'), 
+        'public rep_activity'[activity_type] = "Sample Drop"
+    ),
+    0
+)
+
+-- HCP Coverage: % of territory's HCP base reached by rep
+HCP Coverage % = 
+DIVIDE(
+    DISTINCTCOUNT('public rep_activity'[hcp_id]), 
+    CALCULATE(
+        COUNTROWS(hcp_master), 
+        ALLEXCEPT(hcp_master, hcp_master[territory_id])
+    ),
+    0
+)
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 5: PROMOTION ROI
+-- ════════════════════════════════════════════════════════════════════════════
+
+Total Budget = SUM(promotion_campaigns[budget])
+
+Incremental Revenue = 
+SUM(promotion_campaigns[revenue_after]) - SUM(promotion_campaigns[revenue_before])
+
+ROI Multiple = 
+DIVIDE(
+    [Incremental Revenue], 
+    SUM(promotion_campaigns[budget]),
+    0
+)
+
+Rx Lift = 
+SUM(promotion_campaigns[prescriptions_after]) - SUM(promotion_campaigns[prescriptions_before])
+
+Rx Lift % = 
+DIVIDE(
+    [Rx Lift], 
+    SUM(promotion_campaigns[prescriptions_before]),
+    0
+)
+
+Cost per HCP Reached = 
+DIVIDE(
+    SUM(promotion_campaigns[budget]), 
+    SUM(promotion_campaigns[hcps_reached]),
+    0
+)
+
+Reach Rate % = 
+DIVIDE(
+    SUM(promotion_campaigns[hcps_reached]), 
+    SUM(promotion_campaigns[hcps_targeted]),
+    0
+)
+
+Incremental Revenue per HCP = 
+DIVIDE(
+    [Incremental Revenue],
+    SUM(promotion_campaigns[hcps_reached]),
+    0
+)
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- PAGE 6: FORECASTING
+-- ════════════════════════════════════════════════════════════════════════════
+-- Requires: territory_forecasts + demand_forecasts tables from ML outputs
+
+Forecasted Revenue = SUM(territory_forecasts[total_forecasted_revenue])
+
+Forecasted Units = SUM(territory_forecasts[total_forecasted_units])
+
+Variance to Actuals = 
+SUM(demand_forecasts[predicted]) - SUM(demand_forecasts[actual])
+
+-- ⚠️ MAPE, MAE, R², Forecast Accuracy % are STATIC values
+-- from demand_model_metrics.json. Load as a single-row table
+-- and display via Card visuals. Do NOT re-calculate via DAX.
+
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- END OF MEASURES
+-- ════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,501 @@
+hcp_id,first_name,last_name,specialty,tier,years_experience,hospital_affiliation,city,state,territory_id,npi_number
+HCP-0001,Suresh,Prasad,Gastroenterology,Tier 2,11,Star Institute of Medical Sciences,Pune,Maharashtra,TER-01,9963334018
+HCP-0002,Suresh,Reddy,Pulmonology,Tier 2,8,Global Medical Centre,Thane,Maharashtra,TER-01,2801823908
+HCP-0003,Siddharth,Sharma,Endocrinology,Tier 3,12,Aster Medical Centre,Nashik,Maharashtra,TER-01,8574149614
+HCP-0004,Smita,Nair,Neurology,Tier 2,16,Fortis Institute of Medical Sciences,Thane,Maharashtra,TER-01,9256195745
+HCP-0005,Shweta,Shah,Neurology,Tier 3,8,Rainbow Hospital,Thane,Maharashtra,TER-01,9786748825
+HCP-0006,Shweta,Reddy,Dermatology,Tier 3,10,Ruby Hall Institute of Medical Sciences,Nashik,Maharashtra,TER-01,8877444318
+HCP-0007,Pallavi,Pillai,Dermatology,Tier 3,7,Global Institute of Medical Sciences,Thane,Maharashtra,TER-01,2051454923
+HCP-0008,Siddharth,Shah,Gastroenterology,Tier 3,3,Columbia Asia Super Specialty Hospital,Nagpur,Maharashtra,TER-01,6649827836
+HCP-0009,Ritu,Ghosh,Neurology,Tier 3,17,Wockhardt Institute of Medical Sciences,Pune,Maharashtra,TER-01,2970753705
+HCP-0010,Archana,Prasad,Nephrology,Tier 3,15,Metro Clinic,Thane,Maharashtra,TER-01,2554762903
+HCP-0011,Rohit,Mukherjee,Cardiology,Tier 3,6,Care Medical Centre,Mumbai,Maharashtra,TER-01,5567816720
+HCP-0012,Sachin,Chatterjee,Pulmonology,Tier 2,29,Sunshine Hospital,Mumbai,Maharashtra,TER-01,8047877267
+HCP-0013,Shruti,Agarwal,Nephrology,Tier 3,7,Sagar Hospital,Thane,Maharashtra,TER-01,3615507143
+HCP-0014,Anjali,Sen,Pulmonology,Tier 3,12,Sterling Hospital,Mumbai,Maharashtra,TER-01,8760038701
+HCP-0015,Archana,Ghosh,Dermatology,Tier 3,4,Continental Healthcare,Nashik,Maharashtra,TER-01,4289233844
+HCP-0016,Madhuri,Roy,Pulmonology,Tier 2,21,KIMS Healthcare,Thane,Maharashtra,TER-01,3962958940
+HCP-0017,Mohan,Rajan,Psychiatry,Tier 3,16,Medanta Medical Centre,Thane,Maharashtra,TER-01,1965067727
+HCP-0018,Heena,Roy,Gastroenterology,Tier 2,10,Rainbow Institute of Medical Sciences,Mumbai,Maharashtra,TER-01,1252860896
+HCP-0019,Sunita,Deshmukh,Gastroenterology,Tier 1,36,Sterling Medical Centre,Nagpur,Maharashtra,TER-01,3315992115
+HCP-0020,Dhruv,Ghosh,Psychiatry,Tier 3,8,Medanta Hospital,Nashik,Maharashtra,TER-01,8125276666
+HCP-0021,Gopal,Kapoor,Cardiology,Tier 3,3,Wockhardt Institute of Medical Sciences,Mumbai,Maharashtra,TER-01,4700855390
+HCP-0022,Nisha,Sen,Oncology,Tier 3,10,Ruby Hall Medical Centre,Pune,Maharashtra,TER-01,5618742930
+HCP-0023,Kunal,Roy,Pulmonology,Tier 1,17,Continental Super Specialty Hospital,Mumbai,Maharashtra,TER-01,2015242176
+HCP-0024,Pankaj,Pillai,Cardiology,Tier 3,14,Apollo Clinic,Pune,Maharashtra,TER-01,7249213370
+HCP-0025,Shyam,Roy,Psychiatry,Tier 3,8,Lilavati Medical Centre,Pune,Maharashtra,TER-01,5160575046
+HCP-0026,Vijay,Singh,Cardiology,Tier 3,20,Sterling Healthcare,Mumbai,Maharashtra,TER-01,3281169403
+HCP-0027,Aparna,Reddy,Dermatology,Tier 3,4,Star Super Specialty Hospital,Thane,Maharashtra,TER-01,6305160342
+HCP-0028,Ekta,Das,Cardiology,Tier 3,4,Breach Candy Institute of Medical Sciences,Thane,Maharashtra,TER-01,7540301973
+HCP-0029,Rahul,Rajan,Gastroenterology,Tier 3,14,Manipal Institute of Medical Sciences,Nagpur,Maharashtra,TER-01,8067372072
+HCP-0030,Tushar,Kumar,Rheumatology,Tier 1,18,Max Healthcare,Thane,Maharashtra,TER-01,2139027119
+HCP-0031,Sanjay,Das,Endocrinology,Tier 2,25,Rainbow Multispecialty Hospital,Nashik,Maharashtra,TER-01,9623534576
+HCP-0032,Ajay,Rajan,Endocrinology,Tier 2,11,Medanta Institute of Medical Sciences,Nagpur,Maharashtra,TER-01,3376077463
+HCP-0033,Isha,Pillai,Gastroenterology,Tier 3,18,Sterling Multispecialty Hospital,Nagpur,Maharashtra,TER-01,4633987776
+HCP-0034,Shruti,Chauhan,Neurology,Tier 1,35,Aster Medical Centre,Pune,Maharashtra,TER-01,8478529823
+HCP-0035,Tarun,Roy,Dermatology,Tier 1,32,Fortis Super Specialty Hospital,Pune,Maharashtra,TER-01,3373077218
+HCP-0036,Amit,Bhat,Cardiology,Tier 2,14,Star Medical Centre,Nagpur,Maharashtra,TER-01,3864457210
+HCP-0037,Kamal,Pandey,Endocrinology,Tier 3,7,Narayana Clinic,Dwarka,Delhi,TER-02,1106456634
+HCP-0038,Naveen,Pandey,Gastroenterology,Tier 3,7,Rainbow Hospital,Rohini,Delhi,TER-02,3021598245
+HCP-0039,Varsha,Shetty,Gastroenterology,Tier 2,8,Star Medical Centre,Dwarka,Delhi,TER-02,7006365648
+HCP-0040,Neha,Khanna,Pulmonology,Tier 2,29,Global Multispecialty Hospital,Saket,Delhi,TER-02,5033992825
+HCP-0041,Divya,Mehta,Nephrology,Tier 3,5,City Clinic,New Delhi,Delhi,TER-02,8672650595
+HCP-0042,Ramesh,Iyer,Rheumatology,Tier 2,16,Fortis Institute of Medical Sciences,Dwarka,Delhi,TER-02,2872852789
+HCP-0043,Sandeep,Sen,Gastroenterology,Tier 3,15,Max Institute of Medical Sciences,Rohini,Delhi,TER-02,9249648005
+HCP-0044,Manish,Iyer,Nephrology,Tier 3,11,Star Clinic,Noida,Delhi,TER-02,6695912196
+HCP-0045,Kamal,Verma,Oncology,Tier 2,27,Metro Multispecialty Hospital,Dwarka,Delhi,TER-02,4580822352
+HCP-0046,Ritu,Saxena,Rheumatology,Tier 3,16,Ruby Hall Clinic,Rohini,Delhi,TER-02,3901796894
+HCP-0047,Kapil,Prasad,Dermatology,Tier 2,24,Star Institute of Medical Sciences,Rohini,Delhi,TER-02,7954672204
+HCP-0048,Archana,Krishnan,Gastroenterology,Tier 2,8,Fortis Medical Centre,Dwarka,Delhi,TER-02,9520940324
+HCP-0049,Vishal,Kumar,Rheumatology,Tier 3,14,Sterling Clinic,Dwarka,Delhi,TER-02,2047905204
+HCP-0050,Rajesh,Srivastava,Dermatology,Tier 3,9,Narayana Super Specialty Hospital,Saket,Delhi,TER-02,7519578899
+HCP-0051,Archana,Iyer,Psychiatry,Tier 3,19,City Multispecialty Hospital,Noida,Delhi,TER-02,9123612497
+HCP-0052,Shyam,Mukherjee,Pulmonology,Tier 3,7,Sunshine Super Specialty Hospital,Saket,Delhi,TER-02,7333678472
+HCP-0053,Archana,Shah,Pulmonology,Tier 2,28,Columbia Asia Multispecialty Hospital,Saket,Delhi,TER-02,2889238423
+HCP-0054,Gaurav,Chauhan,Pulmonology,Tier 2,12,Manipal Medical Centre,New Delhi,Delhi,TER-02,1918920620
+HCP-0055,Naveen,Sen,Cardiology,Tier 3,15,Wockhardt Super Specialty Hospital,Dwarka,Delhi,TER-02,3987248494
+HCP-0056,Tushar,Ghosh,Cardiology,Tier 2,17,Continental Clinic,Rohini,Delhi,TER-02,6242173772
+HCP-0057,Shruti,Bose,Neurology,Tier 1,38,Narayana Super Specialty Hospital,Saket,Delhi,TER-02,1116402431
+HCP-0058,Rohit,Kapoor,Nephrology,Tier 2,18,KIMS Clinic,Saket,Delhi,TER-02,6698759353
+HCP-0059,Arjun,Chauhan,Oncology,Tier 3,4,Sterling Hospital,Rohini,Delhi,TER-02,9383431259
+HCP-0060,Neha,Khanna,Cardiology,Tier 3,9,KIMS Super Specialty Hospital,New Delhi,Delhi,TER-02,9677466102
+HCP-0061,Deepa,Chopra,Rheumatology,Tier 3,16,Rainbow Multispecialty Hospital,Dwarka,Delhi,TER-02,8588769565
+HCP-0062,Isha,Prasad,Endocrinology,Tier 3,5,Metro Hospital,Rohini,Delhi,TER-02,9284507318
+HCP-0063,Arjun,Dubey,Gastroenterology,Tier 3,20,Rainbow Super Specialty Hospital,New Delhi,Delhi,TER-02,3693985578
+HCP-0064,Preeti,Krishnan,Dermatology,Tier 3,3,Kokilaben Healthcare,Noida,Delhi,TER-02,2591589823
+HCP-0065,Naveen,Sharma,Psychiatry,Tier 3,15,Kokilaben Institute of Medical Sciences,New Delhi,Delhi,TER-02,5952059278
+HCP-0066,Bhavna,Thakur,Pulmonology,Tier 2,22,Breach Candy Super Specialty Hospital,Saket,Delhi,TER-02,6447717367
+HCP-0067,Jatin,Reddy,Psychiatry,Tier 2,22,Metro Healthcare,Dwarka,Delhi,TER-02,8164814926
+HCP-0068,Sapna,Kulkarni,Gastroenterology,Tier 2,16,Hinduja Multispecialty Hospital,Hubli,Karnataka,TER-03,9633533290
+HCP-0069,Arun,Das,Psychiatry,Tier 3,9,Rainbow Clinic,Belgaum,Karnataka,TER-03,7403028869
+HCP-0070,Arun,Yadav,Gastroenterology,Tier 2,29,Metro Multispecialty Hospital,Hubli,Karnataka,TER-03,7575259637
+HCP-0071,Akash,Roy,Psychiatry,Tier 2,17,Aster Medical Centre,Hubli,Karnataka,TER-03,6122110529
+HCP-0072,Chitra,Srivastava,Gastroenterology,Tier 3,17,Aster Institute of Medical Sciences,Mysuru,Karnataka,TER-03,7858164010
+HCP-0073,Jatin,Rao,Neurology,Tier 2,17,Apollo Institute of Medical Sciences,Mysuru,Karnataka,TER-03,3294092753
+HCP-0074,Kavita,Roy,Endocrinology,Tier 2,11,Apollo Healthcare,Mangaluru,Karnataka,TER-03,6516195409
+HCP-0075,Naveen,Mehta,Nephrology,Tier 3,5,Max Clinic,Mangaluru,Karnataka,TER-03,3112035409
+HCP-0076,Dinesh,Singh,Rheumatology,Tier 2,10,Columbia Asia Hospital,Hubli,Karnataka,TER-03,3656086594
+HCP-0077,Arjun,Malhotra,Nephrology,Tier 3,15,Lilavati Healthcare,Belgaum,Karnataka,TER-03,3667292043
+HCP-0078,Akash,Nair,Gastroenterology,Tier 3,10,Star Hospital,Mysuru,Karnataka,TER-03,1674555072
+HCP-0079,Neha,Agarwal,Psychiatry,Tier 1,30,Lilavati Hospital,Belgaum,Karnataka,TER-03,6289150149
+HCP-0080,Raghav,Kapoor,Gastroenterology,Tier 1,40,Care Healthcare,Hubli,Karnataka,TER-03,5010075517
+HCP-0081,Vijay,Banerjee,Nephrology,Tier 3,4,Fortis Medical Centre,Mysuru,Karnataka,TER-03,8699281063
+HCP-0082,Nilesh,Ghosh,Psychiatry,Tier 3,16,Rainbow Multispecialty Hospital,Bengaluru,Karnataka,TER-03,8300300577
+HCP-0083,Ramesh,Sen,Dermatology,Tier 3,3,Breach Candy Institute of Medical Sciences,Belgaum,Karnataka,TER-03,2075321966
+HCP-0084,Padma,Ghosh,Cardiology,Tier 3,20,Fortis Super Specialty Hospital,Hubli,Karnataka,TER-03,4248149900
+HCP-0085,Yogesh,Malhotra,Endocrinology,Tier 3,15,Care Super Specialty Hospital,Belgaum,Karnataka,TER-03,5686850445
+HCP-0086,Jyoti,Kulkarni,Endocrinology,Tier 3,15,Rainbow Clinic,Hubli,Karnataka,TER-03,9354542654
+HCP-0087,Kamal,Gupta,Neurology,Tier 3,12,Medanta Super Specialty Hospital,Hubli,Karnataka,TER-03,5243939720
+HCP-0088,Vijay,Kapoor,Gastroenterology,Tier 3,13,City Super Specialty Hospital,Belgaum,Karnataka,TER-03,1221670908
+HCP-0089,Deepa,Yadav,Psychiatry,Tier 3,2,Care Healthcare,Bengaluru,Karnataka,TER-03,4433026356
+HCP-0090,Ajay,Roy,Oncology,Tier 1,22,Medanta Clinic,Bengaluru,Karnataka,TER-03,5067594934
+HCP-0091,Ashok,Bose,Nephrology,Tier 3,10,Breach Candy Super Specialty Hospital,Belgaum,Karnataka,TER-03,3028168523
+HCP-0092,Ashok,Tiwari,Rheumatology,Tier 2,12,Max Multispecialty Hospital,Belgaum,Karnataka,TER-03,8964640525
+HCP-0093,Aparna,Chauhan,Nephrology,Tier 3,20,Metro Institute of Medical Sciences,Hubli,Karnataka,TER-03,5933179746
+HCP-0094,Pradeep,Deshmukh,Pulmonology,Tier 3,16,Hinduja Super Specialty Hospital,Mangaluru,Karnataka,TER-03,3995732958
+HCP-0095,Pranav,Khanna,Neurology,Tier 3,14,Wockhardt Institute of Medical Sciences,Mangaluru,Karnataka,TER-03,5948254671
+HCP-0096,Rohit,Mukherjee,Neurology,Tier 3,16,Medanta Healthcare,Bengaluru,Karnataka,TER-03,9205284543
+HCP-0097,Shalini,Pandey,Endocrinology,Tier 3,17,Aster Multispecialty Hospital,Bengaluru,Karnataka,TER-03,7586857685
+HCP-0098,Hemant,Venkatesh,Psychiatry,Tier 3,3,City Hospital,Belgaum,Karnataka,TER-03,5683143581
+HCP-0099,Tushar,Shah,Dermatology,Tier 3,7,Rainbow Multispecialty Hospital,Mangaluru,Karnataka,TER-03,4880176825
+HCP-0100,Kavita,Yadav,Oncology,Tier 2,15,Sagar Clinic,Mysuru,Karnataka,TER-03,4403845222
+HCP-0101,Pooja,Jain,Rheumatology,Tier 3,17,Metro Medical Centre,Coimbatore,Tamil Nadu,TER-04,6292209057
+HCP-0102,Sachin,Mishra,Psychiatry,Tier 3,19,Narayana Hospital,Madurai,Tamil Nadu,TER-04,7818568548
+HCP-0103,Tarun,Subramaniam,Nephrology,Tier 2,20,Sterling Hospital,Coimbatore,Tamil Nadu,TER-04,6313758032
+HCP-0104,Dhruv,Yadav,Nephrology,Tier 3,14,Aster Hospital,Chennai,Tamil Nadu,TER-04,4431078106
+HCP-0105,Pradeep,Banerjee,Rheumatology,Tier 3,6,Care Hospital,Madurai,Tamil Nadu,TER-04,3776011793
+HCP-0106,Tanvi,Gupta,Endocrinology,Tier 3,11,Hinduja Institute of Medical Sciences,Chennai,Tamil Nadu,TER-04,2784572192
+HCP-0107,Chitra,Menon,Nephrology,Tier 3,10,Sterling Super Specialty Hospital,Coimbatore,Tamil Nadu,TER-04,9033293776
+HCP-0108,Sachin,Kumar,Gastroenterology,Tier 2,25,Kokilaben Hospital,Salem,Tamil Nadu,TER-04,8690920484
+HCP-0109,Chitra,Iyer,Nephrology,Tier 3,14,Care Multispecialty Hospital,Trichy,Tamil Nadu,TER-04,6299224734
+HCP-0110,Devi,Kulkarni,Gastroenterology,Tier 3,16,Rainbow Multispecialty Hospital,Chennai,Tamil Nadu,TER-04,8083429496
+HCP-0111,Sunita,Gupta,Psychiatry,Tier 2,11,Columbia Asia Healthcare,Chennai,Tamil Nadu,TER-04,5877639950
+HCP-0112,Manish,Prasad,Pulmonology,Tier 3,20,Sunshine Institute of Medical Sciences,Salem,Tamil Nadu,TER-04,9381721143
+HCP-0113,Rashmi,Pillai,Gastroenterology,Tier 3,5,Star Multispecialty Hospital,Madurai,Tamil Nadu,TER-04,2540492440
+HCP-0114,Vivek,Iyer,Psychiatry,Tier 3,8,Care Institute of Medical Sciences,Chennai,Tamil Nadu,TER-04,1091729577
+HCP-0115,Gaurav,Verma,Gastroenterology,Tier 3,19,KIMS Healthcare,Chennai,Tamil Nadu,TER-04,4735313433
+HCP-0116,Shalini,Deshpande,Endocrinology,Tier 1,32,Aster Super Specialty Hospital,Coimbatore,Tamil Nadu,TER-04,1749459431
+HCP-0117,Suresh,Verma,Gastroenterology,Tier 1,25,Apollo Medical Centre,Trichy,Tamil Nadu,TER-04,2139744790
+HCP-0118,Komal,Chatterjee,Dermatology,Tier 2,22,Continental Multispecialty Hospital,Salem,Tamil Nadu,TER-04,5763350700
+HCP-0119,Nitin,Gupta,Pulmonology,Tier 3,16,Care Hospital,Madurai,Tamil Nadu,TER-04,7019900273
+HCP-0120,Mukesh,Venkatesh,Dermatology,Tier 3,12,City Medical Centre,Chennai,Tamil Nadu,TER-04,1282103057
+HCP-0121,Lakshmi,Patil,Neurology,Tier 3,18,Lilavati Clinic,Salem,Tamil Nadu,TER-04,2847692041
+HCP-0122,Manoj,Thakur,Pulmonology,Tier 3,15,Ruby Hall Medical Centre,Coimbatore,Tamil Nadu,TER-04,7072283057
+HCP-0123,Mohan,Pandey,Neurology,Tier 3,12,Star Multispecialty Hospital,Salem,Tamil Nadu,TER-04,9259157845
+HCP-0124,Pooja,Reddy,Neurology,Tier 3,19,Fortis Healthcare,Coimbatore,Tamil Nadu,TER-04,7707379050
+HCP-0125,Gopal,Shetty,Oncology,Tier 3,11,City Multispecialty Hospital,Chennai,Tamil Nadu,TER-04,2510308881
+HCP-0126,Rahul,Joshi,Gastroenterology,Tier 3,13,Global Multispecialty Hospital,Chennai,Tamil Nadu,TER-04,3391179068
+HCP-0127,Manish,Subramaniam,Endocrinology,Tier 2,30,Continental Multispecialty Hospital,Madurai,Tamil Nadu,TER-04,9252940807
+HCP-0128,Anand,Joshi,Oncology,Tier 3,6,Sunshine Institute of Medical Sciences,Chennai,Tamil Nadu,TER-04,5173893550
+HCP-0129,Bhavna,Pillai,Psychiatry,Tier 2,13,Kokilaben Multispecialty Hospital,Madurai,Tamil Nadu,TER-04,8394198376
+HCP-0130,Dhruv,Deshpande,Cardiology,Tier 1,20,Continental Healthcare,Surat,Gujarat,TER-05,9803662851
+HCP-0131,Tanvi,Rajan,Rheumatology,Tier 3,15,Aster Medical Centre,Rajkot,Gujarat,TER-05,5783809766
+HCP-0132,Harsh,Krishnan,Psychiatry,Tier 3,11,Fortis Medical Centre,Gandhinagar,Gujarat,TER-05,3574081104
+HCP-0133,Preeti,Pillai,Nephrology,Tier 3,12,Medanta Hospital,Vadodara,Gujarat,TER-05,2849649210
+HCP-0134,Chitra,Venkatesh,Pulmonology,Tier 2,10,Wockhardt Super Specialty Hospital,Vadodara,Gujarat,TER-05,4187043237
+HCP-0135,Sachin,Kumar,Rheumatology,Tier 3,20,Wockhardt Institute of Medical Sciences,Rajkot,Gujarat,TER-05,8044354825
+HCP-0136,Geeta,Patel,Endocrinology,Tier 3,16,Rainbow Multispecialty Hospital,Gandhinagar,Gujarat,TER-05,5673482258
+HCP-0137,Gaurav,Saxena,Pulmonology,Tier 3,14,Lilavati Institute of Medical Sciences,Ahmedabad,Gujarat,TER-05,2458198451
+HCP-0138,Anjali,Kumar,Dermatology,Tier 3,18,KIMS Super Specialty Hospital,Gandhinagar,Gujarat,TER-05,6795522649
+HCP-0139,Nilesh,Thakur,Gastroenterology,Tier 3,6,Aster Medical Centre,Ahmedabad,Gujarat,TER-05,1323639855
+HCP-0140,Hemant,Bose,Rheumatology,Tier 3,16,Star Healthcare,Gandhinagar,Gujarat,TER-05,2357806226
+HCP-0141,Pankaj,Malhotra,Nephrology,Tier 3,3,Kokilaben Healthcare,Gandhinagar,Gujarat,TER-05,5613613759
+HCP-0142,Amit,Singh,Nephrology,Tier 2,28,Max Healthcare,Ahmedabad,Gujarat,TER-05,6946306973
+HCP-0143,Kapil,Prasad,Psychiatry,Tier 3,8,Hinduja Healthcare,Gandhinagar,Gujarat,TER-05,5560712830
+HCP-0144,Jyoti,Venkatesh,Endocrinology,Tier 1,22,Rainbow Clinic,Ahmedabad,Gujarat,TER-05,9551219870
+HCP-0145,Nitin,Agarwal,Nephrology,Tier 2,21,Continental Multispecialty Hospital,Rajkot,Gujarat,TER-05,2437308013
+HCP-0146,Devi,Krishnan,Nephrology,Tier 2,12,Hinduja Hospital,Gandhinagar,Gujarat,TER-05,6797436140
+HCP-0147,Raghav,Rajan,Rheumatology,Tier 2,17,Global Clinic,Ahmedabad,Gujarat,TER-05,9991312028
+HCP-0148,Ramesh,Menon,Nephrology,Tier 1,21,Hinduja Super Specialty Hospital,Surat,Gujarat,TER-05,3088517710
+HCP-0149,Deepa,Joshi,Dermatology,Tier 1,39,Global Super Specialty Hospital,Gandhinagar,Gujarat,TER-05,3261436148
+HCP-0150,Vishal,Jain,Oncology,Tier 2,13,Narayana Super Specialty Hospital,Surat,Gujarat,TER-05,4876877928
+HCP-0151,Amit,Pandey,Gastroenterology,Tier 2,27,Lilavati Super Specialty Hospital,Rajkot,Gujarat,TER-05,2928130926
+HCP-0152,Ajay,Chopra,Gastroenterology,Tier 3,20,Ruby Hall Clinic,Vadodara,Gujarat,TER-05,8599680717
+HCP-0153,Ramesh,Chatterjee,Endocrinology,Tier 3,6,Aster Hospital,Surat,Gujarat,TER-05,8048810275
+HCP-0154,Kamal,Nair,Pulmonology,Tier 3,11,Max Super Specialty Hospital,Ahmedabad,Gujarat,TER-05,5983503547
+HCP-0155,Ramesh,Joshi,Dermatology,Tier 3,16,Kokilaben Hospital,Surat,Gujarat,TER-05,2781968664
+HCP-0156,Sameer,Das,Dermatology,Tier 2,15,Apollo Multispecialty Hospital,Vadodara,Gujarat,TER-05,4997866845
+HCP-0157,Yogesh,Deshmukh,Endocrinology,Tier 3,11,Sterling Institute of Medical Sciences,Hyderabad,Telangana,TER-06,4569592370
+HCP-0158,Pankaj,Malhotra,Dermatology,Tier 3,10,KIMS Super Specialty Hospital,Hyderabad,Telangana,TER-06,2817865363
+HCP-0159,Gaurav,Bhat,Gastroenterology,Tier 2,28,City Clinic,Secunderabad,Telangana,TER-06,1269754673
+HCP-0160,Mukesh,Deshpande,Pulmonology,Tier 3,9,Rainbow Medical Centre,Warangal,Telangana,TER-06,6545970956
+HCP-0161,Pallavi,Das,Endocrinology,Tier 3,4,Sagar Multispecialty Hospital,Warangal,Telangana,TER-06,3380064537
+HCP-0162,Pankaj,Gupta,Neurology,Tier 3,2,Kokilaben Super Specialty Hospital,Secunderabad,Telangana,TER-06,5585133383
+HCP-0163,Nandini,Shah,Rheumatology,Tier 2,18,Manipal Hospital,Warangal,Telangana,TER-06,3760786161
+HCP-0164,Dinesh,Kapoor,Psychiatry,Tier 3,7,Manipal Hospital,Warangal,Telangana,TER-06,9347720574
+HCP-0165,Nisha,Gupta,Cardiology,Tier 3,11,Sagar Clinic,Secunderabad,Telangana,TER-06,7627266377
+HCP-0166,Mamta,Rao,Cardiology,Tier 2,18,Aster Hospital,Warangal,Telangana,TER-06,8728116828
+HCP-0167,Mohan,Prasad,Oncology,Tier 3,7,Sterling Institute of Medical Sciences,Secunderabad,Telangana,TER-06,7431813987
+HCP-0168,Sunil,Chauhan,Oncology,Tier 3,15,City Super Specialty Hospital,Hyderabad,Telangana,TER-06,6556684476
+HCP-0169,Aarti,Rajan,Psychiatry,Tier 2,30,Breach Candy Medical Centre,Warangal,Telangana,TER-06,8257484586
+HCP-0170,Amit,Narayan,Neurology,Tier 3,15,Aster Institute of Medical Sciences,Warangal,Telangana,TER-06,5071218314
+HCP-0171,Lakshmi,Dubey,Endocrinology,Tier 2,12,City Institute of Medical Sciences,Kolkata,West Bengal,TER-07,8650676663
+HCP-0172,Neha,Das,Neurology,Tier 3,14,Metro Hospital,Durgapur,West Bengal,TER-07,3598862507
+HCP-0173,Sameer,Menon,Dermatology,Tier 3,18,Kokilaben Clinic,Howrah,West Bengal,TER-07,2196963451
+HCP-0174,Suresh,Prasad,Pulmonology,Tier 2,25,Medanta Multispecialty Hospital,Siliguri,West Bengal,TER-07,8623414405
+HCP-0175,Rahul,Jain,Psychiatry,Tier 2,11,Manipal Super Specialty Hospital,Howrah,West Bengal,TER-07,5613018394
+HCP-0176,Sarita,Malhotra,Neurology,Tier 3,4,Global Healthcare,Durgapur,West Bengal,TER-07,1963110410
+HCP-0177,Kapil,Verma,Psychiatry,Tier 2,19,Global Healthcare,Kolkata,West Bengal,TER-07,6879428703
+HCP-0178,Kamal,Verma,Dermatology,Tier 3,11,Wockhardt Institute of Medical Sciences,Kolkata,West Bengal,TER-07,8382488970
+HCP-0179,Vishal,Pandey,Dermatology,Tier 3,12,Care Hospital,Howrah,West Bengal,TER-07,7227593033
+HCP-0180,Pradeep,Verma,Pulmonology,Tier 3,6,Breach Candy Healthcare,Howrah,West Bengal,TER-07,5952163720
+HCP-0181,Aarti,Venkatesh,Pulmonology,Tier 2,10,Aster Medical Centre,Durgapur,West Bengal,TER-07,7660813178
+HCP-0182,Preeti,Jain,Pulmonology,Tier 3,20,Metro Medical Centre,Howrah,West Bengal,TER-07,4709911999
+HCP-0183,Mamta,Khanna,Gastroenterology,Tier 3,2,Sterling Institute of Medical Sciences,Siliguri,West Bengal,TER-07,7638204740
+HCP-0184,Ajay,Chopra,Oncology,Tier 2,22,Max Institute of Medical Sciences,Durgapur,West Bengal,TER-07,1257324536
+HCP-0185,Pankaj,Kapoor,Rheumatology,Tier 2,18,Rainbow Multispecialty Hospital,Howrah,West Bengal,TER-07,8991977937
+HCP-0186,Rohit,Srivastava,Pulmonology,Tier 2,18,Columbia Asia Clinic,Kolkata,West Bengal,TER-07,5821194895
+HCP-0187,Ashok,Nair,Oncology,Tier 1,22,Narayana Super Specialty Hospital,Siliguri,West Bengal,TER-07,2343100352
+HCP-0188,Mukesh,Mukherjee,Nephrology,Tier 3,2,Max Clinic,Siliguri,West Bengal,TER-07,7465834732
+HCP-0189,Rahul,Patil,Cardiology,Tier 2,23,City Super Specialty Hospital,Durgapur,West Bengal,TER-07,7316122432
+HCP-0190,Kunal,Nair,Nephrology,Tier 3,14,Kokilaben Hospital,Durgapur,West Bengal,TER-07,2720484983
+HCP-0191,Vivek,Menon,Dermatology,Tier 3,18,Ruby Hall Super Specialty Hospital,Kota,Rajasthan,TER-08,7656585531
+HCP-0192,Nitin,Krishnan,Endocrinology,Tier 3,14,Kokilaben Super Specialty Hospital,Jaipur,Rajasthan,TER-08,9533188043
+HCP-0193,Sameer,Srivastava,Rheumatology,Tier 2,20,Sagar Hospital,Ajmer,Rajasthan,TER-08,1194576436
+HCP-0194,Jyoti,Chopra,Endocrinology,Tier 3,18,Manipal Multispecialty Hospital,Ajmer,Rajasthan,TER-08,2368076065
+HCP-0195,Nitin,Prasad,Rheumatology,Tier 3,18,Sagar Healthcare,Udaipur,Rajasthan,TER-08,7712708591
+HCP-0196,Suresh,Menon,Dermatology,Tier 2,26,Lilavati Super Specialty Hospital,Kota,Rajasthan,TER-08,3702653209
+HCP-0197,Kiran,Thakur,Rheumatology,Tier 3,9,Sunshine Hospital,Ajmer,Rajasthan,TER-08,7801180691
+HCP-0198,Lakshmi,Narayan,Oncology,Tier 3,9,Fortis Healthcare,Jodhpur,Rajasthan,TER-08,1471997674
+HCP-0199,Aarti,Pandey,Gastroenterology,Tier 2,24,Continental Healthcare,Kota,Rajasthan,TER-08,9248574674
+HCP-0200,Akash,Narayan,Endocrinology,Tier 1,21,Global Multispecialty Hospital,Ajmer,Rajasthan,TER-08,6913417379
+HCP-0201,Sachin,Sen,Neurology,Tier 2,27,Sterling Medical Centre,Udaipur,Rajasthan,TER-08,5111732824
+HCP-0202,Preeti,Banerjee,Nephrology,Tier 3,8,Rainbow Institute of Medical Sciences,Udaipur,Rajasthan,TER-08,7395219544
+HCP-0203,Kamal,Narayan,Dermatology,Tier 2,29,Global Clinic,Ajmer,Rajasthan,TER-08,5924077461
+HCP-0204,Sarita,Reddy,Psychiatry,Tier 2,23,KIMS Medical Centre,Udaipur,Rajasthan,TER-08,2166605339
+HCP-0205,Vandana,Patil,Cardiology,Tier 2,15,Care Medical Centre,Ajmer,Rajasthan,TER-08,1225447588
+HCP-0206,Dev,Chopra,Endocrinology,Tier 2,25,Narayana Clinic,Jaipur,Rajasthan,TER-08,7338081696
+HCP-0207,Tushar,Yadav,Cardiology,Tier 2,28,Metro Medical Centre,Jaipur,Rajasthan,TER-08,5022964382
+HCP-0208,Anand,Pandey,Endocrinology,Tier 3,14,Sterling Medical Centre,Jaipur,Rajasthan,TER-08,9272277508
+HCP-0209,Rajesh,Bhat,Dermatology,Tier 3,11,Ruby Hall Institute of Medical Sciences,Udaipur,Rajasthan,TER-08,5031086659
+HCP-0210,Sachin,Chauhan,Dermatology,Tier 2,13,Sunshine Clinic,Udaipur,Rajasthan,TER-08,8079331637
+HCP-0211,Rajesh,Prasad,Nephrology,Tier 2,29,Continental Medical Centre,Ajmer,Rajasthan,TER-08,9147736635
+HCP-0212,Ramesh,Kulkarni,Dermatology,Tier 1,19,Sterling Multispecialty Hospital,Jodhpur,Rajasthan,TER-08,5019339446
+HCP-0213,Smita,Das,Nephrology,Tier 3,11,Metro Institute of Medical Sciences,Udaipur,Rajasthan,TER-08,3460489491
+HCP-0214,Rashmi,Subramaniam,Dermatology,Tier 2,17,Narayana Clinic,Kota,Rajasthan,TER-08,8601409432
+HCP-0215,Hemant,Yadav,Gastroenterology,Tier 2,12,Sterling Medical Centre,Jodhpur,Rajasthan,TER-08,6899673770
+HCP-0216,Pankaj,Srivastava,Gastroenterology,Tier 3,4,Sagar Clinic,Jodhpur,Rajasthan,TER-08,2553854176
+HCP-0217,Manoj,Singh,Pulmonology,Tier 3,20,Global Medical Centre,Jodhpur,Rajasthan,TER-08,6001648993
+HCP-0218,Vinay,Iyer,Rheumatology,Tier 3,4,Sagar Clinic,Kota,Rajasthan,TER-08,4473306055
+HCP-0219,Ramesh,Pandey,Cardiology,Tier 3,11,Sunshine Hospital,Jalandhar,Punjab,TER-09,6995554056
+HCP-0220,Akash,Pillai,Cardiology,Tier 3,13,Rainbow Hospital,Jalandhar,Punjab,TER-09,4840638976
+HCP-0221,Pankaj,Gupta,Endocrinology,Tier 2,28,Sunshine Institute of Medical Sciences,Ludhiana,Punjab,TER-09,9434381915
+HCP-0222,Arjun,Malhotra,Oncology,Tier 3,4,Star Institute of Medical Sciences,Jalandhar,Punjab,TER-09,8989870040
+HCP-0223,Chitra,Dubey,Gastroenterology,Tier 3,2,Lilavati Clinic,Chandigarh,Punjab,TER-09,7633342225
+HCP-0224,Nilesh,Banerjee,Neurology,Tier 2,16,KIMS Institute of Medical Sciences,Ludhiana,Punjab,TER-09,4287754238
+HCP-0225,Nandini,Pandey,Cardiology,Tier 3,8,Max Hospital,Ludhiana,Punjab,TER-09,3550970716
+HCP-0226,Dinesh,Venkatesh,Gastroenterology,Tier 3,14,Ruby Hall Medical Centre,Chandigarh,Punjab,TER-09,3318250726
+HCP-0227,Vishal,Singh,Nephrology,Tier 2,26,Hinduja Healthcare,Ludhiana,Punjab,TER-09,2377246195
+HCP-0228,Shalini,Rajan,Oncology,Tier 3,10,Fortis Healthcare,Amritsar,Punjab,TER-09,4915196257
+HCP-0229,Tarun,Roy,Neurology,Tier 3,18,Hinduja Institute of Medical Sciences,Jalandhar,Punjab,TER-09,7083067988
+HCP-0230,Smita,Mehta,Psychiatry,Tier 3,9,Lilavati Super Specialty Hospital,Ludhiana,Punjab,TER-09,4039019230
+HCP-0231,Vikram,Roy,Oncology,Tier 3,14,Columbia Asia Multispecialty Hospital,Ludhiana,Punjab,TER-09,6168291913
+HCP-0232,Vinay,Menon,Gastroenterology,Tier 1,23,Wockhardt Institute of Medical Sciences,Chandigarh,Punjab,TER-09,1312606333
+HCP-0233,Aniket,Narayan,Gastroenterology,Tier 3,8,Hinduja Multispecialty Hospital,Jalandhar,Punjab,TER-09,1065857791
+HCP-0234,Akash,Iyer,Psychiatry,Tier 3,8,Wockhardt Medical Centre,Ludhiana,Punjab,TER-09,7666129822
+HCP-0235,Arjun,Kapoor,Neurology,Tier 3,10,Kokilaben Healthcare,Amritsar,Punjab,TER-09,9086615744
+HCP-0236,Sandeep,Narayan,Neurology,Tier 3,13,Hinduja Clinic,Ludhiana,Punjab,TER-09,9786280935
+HCP-0237,Akash,Joshi,Pulmonology,Tier 1,24,Manipal Medical Centre,Jalandhar,Punjab,TER-09,2416760621
+HCP-0238,Jatin,Das,Neurology,Tier 3,17,Sunshine Institute of Medical Sciences,Amritsar,Punjab,TER-09,8471499716
+HCP-0239,Shyam,Shetty,Pulmonology,Tier 2,13,Global Institute of Medical Sciences,Jalandhar,Punjab,TER-09,5111301175
+HCP-0240,Jatin,Kumar,Cardiology,Tier 3,15,Manipal Super Specialty Hospital,Chandigarh,Punjab,TER-09,3708842947
+HCP-0241,Shalini,Sharma,Psychiatry,Tier 2,9,City Institute of Medical Sciences,Amritsar,Punjab,TER-09,3095318649
+HCP-0242,Devi,Pandey,Pulmonology,Tier 1,32,Lilavati Hospital,Kozhikode,Kerala,TER-10,1769945233
+HCP-0243,Sunil,Joshi,Rheumatology,Tier 2,16,Kokilaben Multispecialty Hospital,Kannur,Kerala,TER-10,8709192840
+HCP-0244,Geeta,Kapoor,Gastroenterology,Tier 3,4,Care Super Specialty Hospital,Kozhikode,Kerala,TER-10,1136083924
+HCP-0245,Arjun,Roy,Cardiology,Tier 3,4,Sterling Super Specialty Hospital,Thiruvananthapuram,Kerala,TER-10,8663837890
+HCP-0246,Kunal,Nair,Cardiology,Tier 3,8,Rainbow Healthcare,Thiruvananthapuram,Kerala,TER-10,7337225482
+HCP-0247,Neha,Krishnan,Pulmonology,Tier 3,3,Narayana Super Specialty Hospital,Kannur,Kerala,TER-10,2350701477
+HCP-0248,Aniket,Joshi,Oncology,Tier 3,11,Narayana Healthcare,Kochi,Kerala,TER-10,6719736115
+HCP-0249,Rohit,Subramaniam,Pulmonology,Tier 3,3,Medanta Clinic,Kozhikode,Kerala,TER-10,5621463184
+HCP-0250,Nitin,Deshpande,Neurology,Tier 2,28,Aster Super Specialty Hospital,Kochi,Kerala,TER-10,9558091177
+HCP-0251,Pradeep,Roy,Oncology,Tier 3,20,Star Clinic,Thiruvananthapuram,Kerala,TER-10,7951902330
+HCP-0252,Dev,Kumar,Endocrinology,Tier 1,37,Care Medical Centre,Thrissur,Kerala,TER-10,8471762590
+HCP-0253,Meera,Reddy,Nephrology,Tier 1,26,Continental Multispecialty Hospital,Thrissur,Kerala,TER-10,1439080604
+HCP-0254,Shruti,Malhotra,Pulmonology,Tier 3,5,Apollo Hospital,Thrissur,Kerala,TER-10,9989642546
+HCP-0255,Ravi,Tiwari,Oncology,Tier 1,39,Max Institute of Medical Sciences,Thrissur,Kerala,TER-10,5201221330
+HCP-0256,Nikhil,Krishnan,Endocrinology,Tier 2,17,Aster Clinic,Kozhikode,Kerala,TER-10,1626785308
+HCP-0257,Sneha,Pandey,Dermatology,Tier 2,16,Columbia Asia Institute of Medical Sciences,Kozhikode,Kerala,TER-10,7979466538
+HCP-0258,Vivek,Kapoor,Nephrology,Tier 2,20,Hinduja Super Specialty Hospital,Kochi,Kerala,TER-10,7958672456
+HCP-0259,Naveen,Malhotra,Rheumatology,Tier 2,17,Hinduja Healthcare,Thiruvananthapuram,Kerala,TER-10,6157617867
+HCP-0260,Geeta,Kulkarni,Psychiatry,Tier 2,15,Hinduja Clinic,Kannur,Kerala,TER-10,8670238355
+HCP-0261,Dhruv,Rao,Pulmonology,Tier 3,19,Apollo Institute of Medical Sciences,Thiruvananthapuram,Kerala,TER-10,4042413312
+HCP-0262,Harsh,Subramaniam,Oncology,Tier 1,19,Care Multispecialty Hospital,Thrissur,Kerala,TER-10,6334440295
+HCP-0263,Dev,Saxena,Dermatology,Tier 3,17,Metro Clinic,Thrissur,Kerala,TER-10,9454334062
+HCP-0264,Sandeep,Sen,Dermatology,Tier 3,9,Star Institute of Medical Sciences,Kochi,Kerala,TER-10,2524751277
+HCP-0265,Amit,Ghosh,Oncology,Tier 3,15,Medanta Hospital,Kozhikode,Kerala,TER-10,5718479235
+HCP-0266,Vandana,Chatterjee,Rheumatology,Tier 3,16,Kokilaben Clinic,Thiruvananthapuram,Kerala,TER-10,5942411853
+HCP-0267,Pankaj,Nair,Dermatology,Tier 2,12,Kokilaben Multispecialty Hospital,Kochi,Kerala,TER-10,6768427475
+HCP-0268,Sunil,Chopra,Dermatology,Tier 2,30,Ruby Hall Multispecialty Hospital,Thrissur,Kerala,TER-10,5583478908
+HCP-0269,Sarita,Iyer,Neurology,Tier 1,36,Narayana Institute of Medical Sciences,Kochi,Kerala,TER-10,5982744929
+HCP-0270,Sachin,Banerjee,Endocrinology,Tier 3,15,Wockhardt Hospital,Thiruvananthapuram,Kerala,TER-10,4792874364
+HCP-0271,Tarun,Tiwari,Gastroenterology,Tier 1,23,Continental Institute of Medical Sciences,Thiruvananthapuram,Kerala,TER-10,9858643842
+HCP-0272,Chitra,Mehta,Gastroenterology,Tier 2,11,Aster Institute of Medical Sciences,Thrissur,Kerala,TER-10,8999963054
+HCP-0273,Hemant,Kulkarni,Rheumatology,Tier 3,20,Medanta Multispecialty Hospital,Thrissur,Kerala,TER-10,8733575600
+HCP-0274,Aniket,Reddy,Neurology,Tier 3,9,Lilavati Hospital,Lucknow,Uttar Pradesh,TER-11,6081137534
+HCP-0275,Ramesh,Tiwari,Endocrinology,Tier 3,14,Breach Candy Medical Centre,Allahabad,Uttar Pradesh,TER-11,6011649263
+HCP-0276,Swati,Kulkarni,Rheumatology,Tier 3,13,Apollo Clinic,Lucknow,Uttar Pradesh,TER-11,1586412136
+HCP-0277,Kamal,Mukherjee,Oncology,Tier 3,15,Rainbow Super Specialty Hospital,Agra,Uttar Pradesh,TER-11,7201296029
+HCP-0278,Ekta,Patel,Gastroenterology,Tier 3,3,Aster Medical Centre,Kanpur,Uttar Pradesh,TER-11,7603978731
+HCP-0279,Varsha,Ghosh,Psychiatry,Tier 3,18,Medanta Healthcare,Allahabad,Uttar Pradesh,TER-11,5785481124
+HCP-0280,Nilesh,Menon,Cardiology,Tier 3,19,KIMS Clinic,Agra,Uttar Pradesh,TER-11,4227004325
+HCP-0281,Sunita,Malhotra,Dermatology,Tier 2,11,Continental Super Specialty Hospital,Agra,Uttar Pradesh,TER-11,2017675569
+HCP-0282,Aniket,Subramaniam,Rheumatology,Tier 2,13,City Medical Centre,Agra,Uttar Pradesh,TER-11,4370902138
+HCP-0283,Sandeep,Singh,Pulmonology,Tier 3,19,Narayana Multispecialty Hospital,Kanpur,Uttar Pradesh,TER-11,6551823759
+HCP-0284,Kunal,Mukherjee,Dermatology,Tier 3,15,Fortis Multispecialty Hospital,Varanasi,Uttar Pradesh,TER-11,4719780110
+HCP-0285,Sarita,Kulkarni,Oncology,Tier 3,6,Metro Institute of Medical Sciences,Agra,Uttar Pradesh,TER-11,7074050517
+HCP-0286,Hemant,Khanna,Pulmonology,Tier 1,37,Kokilaben Clinic,Kanpur,Uttar Pradesh,TER-11,9376277483
+HCP-0287,Priya,Khanna,Dermatology,Tier 3,13,Max Super Specialty Hospital,Agra,Uttar Pradesh,TER-11,7590302909
+HCP-0288,Shruti,Pillai,Neurology,Tier 3,12,Global Healthcare,Kanpur,Uttar Pradesh,TER-11,8956094389
+HCP-0289,Dinesh,Srivastava,Dermatology,Tier 1,15,Medanta Super Specialty Hospital,Agra,Uttar Pradesh,TER-11,5973501339
+HCP-0290,Tarun,Rao,Endocrinology,Tier 3,7,Aster Hospital,Kanpur,Uttar Pradesh,TER-11,8106401208
+HCP-0291,Rashmi,Rajan,Endocrinology,Tier 3,14,Care Multispecialty Hospital,Lucknow,Uttar Pradesh,TER-11,4243697409
+HCP-0292,Arun,Venkatesh,Gastroenterology,Tier 1,17,Manipal Healthcare,Agra,Uttar Pradesh,TER-11,8215470878
+HCP-0293,Radha,Deshmukh,Oncology,Tier 3,17,Max Medical Centre,Varanasi,Uttar Pradesh,TER-11,2645272822
+HCP-0294,Deepak,Nair,Nephrology,Tier 2,20,Continental Super Specialty Hospital,Varanasi,Uttar Pradesh,TER-11,1613549255
+HCP-0295,Rajesh,Jain,Psychiatry,Tier 3,8,Care Institute of Medical Sciences,Kanpur,Uttar Pradesh,TER-11,8243746556
+HCP-0296,Arun,Nair,Dermatology,Tier 2,19,Breach Candy Multispecialty Hospital,Panipat,Haryana,TER-12,4397648387
+HCP-0297,Mamta,Reddy,Rheumatology,Tier 2,30,Apollo Super Specialty Hospital,Karnal,Haryana,TER-12,9056616444
+HCP-0298,Isha,Mukherjee,Oncology,Tier 2,28,Fortis Super Specialty Hospital,Karnal,Haryana,TER-12,5100282913
+HCP-0299,Manoj,Das,Rheumatology,Tier 3,18,Apollo Multispecialty Hospital,Gurugram,Haryana,TER-12,9306142066
+HCP-0300,Ekta,Pandey,Endocrinology,Tier 2,10,Apollo Healthcare,Panipat,Haryana,TER-12,1290050198
+HCP-0301,Sunita,Singh,Oncology,Tier 3,18,Continental Clinic,Karnal,Haryana,TER-12,2727768349
+HCP-0302,Vijay,Jain,Dermatology,Tier 2,10,Sagar Medical Centre,Karnal,Haryana,TER-12,6698349136
+HCP-0303,Tushar,Thakur,Dermatology,Tier 3,15,Sunshine Super Specialty Hospital,Karnal,Haryana,TER-12,2024939794
+HCP-0304,Shruti,Iyer,Rheumatology,Tier 3,11,Star Institute of Medical Sciences,Gurugram,Haryana,TER-12,1754393408
+HCP-0305,Deepa,Subramaniam,Psychiatry,Tier 1,31,Sagar Super Specialty Hospital,Karnal,Haryana,TER-12,2113457241
+HCP-0306,Akash,Khanna,Dermatology,Tier 3,12,Breach Candy Multispecialty Hospital,Gurugram,Haryana,TER-12,3249936731
+HCP-0307,Ekta,Shah,Psychiatry,Tier 1,16,Sterling Super Specialty Hospital,Karnal,Haryana,TER-12,3434757387
+HCP-0308,Kiran,Khanna,Rheumatology,Tier 2,15,Sunshine Healthcare,Gurugram,Haryana,TER-12,1011031667
+HCP-0309,Rajesh,Das,Neurology,Tier 1,19,Narayana Super Specialty Hospital,Panipat,Haryana,TER-12,9741819989
+HCP-0310,Dev,Prasad,Gastroenterology,Tier 3,9,Breach Candy Institute of Medical Sciences,Karnal,Haryana,TER-12,6669078244
+HCP-0311,Dhruv,Menon,Cardiology,Tier 2,15,Sagar Hospital,Faridabad,Haryana,TER-12,9392707144
+HCP-0312,Varsha,Yadav,Nephrology,Tier 3,4,Global Clinic,Karnal,Haryana,TER-12,5329194647
+HCP-0313,Ekta,Bhat,Gastroenterology,Tier 3,13,Metro Clinic,Panipat,Haryana,TER-12,4332404822
+HCP-0314,Vijay,Srivastava,Endocrinology,Tier 3,15,Apollo Medical Centre,Gurugram,Haryana,TER-12,7620886217
+HCP-0315,Raghav,Sharma,Cardiology,Tier 3,11,Medanta Medical Centre,Panipat,Haryana,TER-12,6317889312
+HCP-0316,Vikram,Joshi,Dermatology,Tier 3,9,Sagar Clinic,Gurugram,Haryana,TER-12,6894808149
+HCP-0317,Arun,Patil,Endocrinology,Tier 1,17,Metro Healthcare,Jabalpur,Madhya Pradesh,TER-13,5562470175
+HCP-0318,Rohit,Das,Neurology,Tier 2,30,Sunshine Multispecialty Hospital,Jabalpur,Madhya Pradesh,TER-13,6661014794
+HCP-0319,Neha,Rao,Rheumatology,Tier 2,12,Medanta Medical Centre,Bhopal,Madhya Pradesh,TER-13,7225841764
+HCP-0320,Rekha,Sen,Gastroenterology,Tier 2,17,Ruby Hall Multispecialty Hospital,Jabalpur,Madhya Pradesh,TER-13,4661383114
+HCP-0321,Padma,Bhat,Rheumatology,Tier 3,8,Hinduja Medical Centre,Bhopal,Madhya Pradesh,TER-13,9981691030
+HCP-0322,Pallavi,Dubey,Nephrology,Tier 3,7,Apollo Clinic,Gwalior,Madhya Pradesh,TER-13,8965451958
+HCP-0323,Kamal,Das,Dermatology,Tier 1,18,Apollo Hospital,Indore,Madhya Pradesh,TER-13,5220094152
+HCP-0324,Geeta,Menon,Dermatology,Tier 3,4,Apollo Hospital,Gwalior,Madhya Pradesh,TER-13,8069459895
+HCP-0325,Arun,Deshmukh,Psychiatry,Tier 2,13,Metro Clinic,Bhopal,Madhya Pradesh,TER-13,6991473746
+HCP-0326,Padma,Saxena,Gastroenterology,Tier 2,16,Aster Clinic,Indore,Madhya Pradesh,TER-13,4794276323
+HCP-0327,Kalpana,Jain,Nephrology,Tier 2,21,Global Clinic,Jabalpur,Madhya Pradesh,TER-13,1261903104
+HCP-0328,Deepa,Pandey,Pulmonology,Tier 2,28,Global Super Specialty Hospital,Indore,Madhya Pradesh,TER-13,8358870981
+HCP-0329,Kapil,Bose,Rheumatology,Tier 2,20,Aster Medical Centre,Gwalior,Madhya Pradesh,TER-13,5406906896
+HCP-0330,Suresh,Khanna,Psychiatry,Tier 2,26,Columbia Asia Medical Centre,Gwalior,Madhya Pradesh,TER-13,1430073711
+HCP-0331,Siddharth,Sen,Cardiology,Tier 3,20,Wockhardt Multispecialty Hospital,Indore,Madhya Pradesh,TER-13,1746087503
+HCP-0332,Aarti,Prasad,Rheumatology,Tier 3,13,Metro Healthcare,Bhopal,Madhya Pradesh,TER-13,5073211715
+HCP-0333,Sandeep,Bose,Endocrinology,Tier 3,3,Max Hospital,Jabalpur,Madhya Pradesh,TER-13,1939777262
+HCP-0334,Rajesh,Deshmukh,Gastroenterology,Tier 3,12,Rainbow Medical Centre,Indore,Madhya Pradesh,TER-13,2389803385
+HCP-0335,Heena,Venkatesh,Dermatology,Tier 3,4,Kokilaben Institute of Medical Sciences,Gwalior,Madhya Pradesh,TER-13,5728897164
+HCP-0336,Deepa,Agarwal,Oncology,Tier 3,12,Narayana Institute of Medical Sciences,Jabalpur,Madhya Pradesh,TER-13,8675071314
+HCP-0337,Heena,Mehta,Nephrology,Tier 2,13,Sunshine Hospital,Indore,Madhya Pradesh,TER-13,1139082827
+HCP-0338,Sandeep,Jain,Rheumatology,Tier 2,23,Manipal Multispecialty Hospital,Bhopal,Madhya Pradesh,TER-13,4201225242
+HCP-0339,Aarti,Agarwal,Dermatology,Tier 3,16,Apollo Multispecialty Hospital,Gwalior,Madhya Pradesh,TER-13,1900587144
+HCP-0340,Pradeep,Mishra,Cardiology,Tier 3,14,Ruby Hall Institute of Medical Sciences,Bhopal,Madhya Pradesh,TER-13,7073166054
+HCP-0341,Pradeep,Sen,Psychiatry,Tier 2,13,Ruby Hall Hospital,Indore,Madhya Pradesh,TER-13,5438474114
+HCP-0342,Divya,Nair,Endocrinology,Tier 1,20,Sunshine Hospital,Jabalpur,Madhya Pradesh,TER-13,5694848867
+HCP-0343,Nitin,Chopra,Oncology,Tier 3,15,Narayana Hospital,Gaya,Bihar,TER-14,5729866281
+HCP-0344,Nisha,Pandey,Pulmonology,Tier 3,11,Lilavati Medical Centre,Muzaffarpur,Bihar,TER-14,1411955771
+HCP-0345,Kamal,Bose,Neurology,Tier 2,21,Max Multispecialty Hospital,Patna,Bihar,TER-14,3062994753
+HCP-0346,Ritu,Agarwal,Dermatology,Tier 3,5,Lilavati Super Specialty Hospital,Bhagalpur,Bihar,TER-14,7002076563
+HCP-0347,Manish,Mishra,Pulmonology,Tier 1,20,Kokilaben Clinic,Bhagalpur,Bihar,TER-14,2586568081
+HCP-0348,Kiran,Malhotra,Gastroenterology,Tier 3,20,Fortis Medical Centre,Muzaffarpur,Bihar,TER-14,3866755218
+HCP-0349,Pallavi,Sen,Rheumatology,Tier 3,19,Fortis Super Specialty Hospital,Gaya,Bihar,TER-14,7539441086
+HCP-0350,Dinesh,Chopra,Gastroenterology,Tier 3,11,Max Clinic,Bhagalpur,Bihar,TER-14,4067919621
+HCP-0351,Sunil,Ghosh,Rheumatology,Tier 3,5,Continental Clinic,Gaya,Bihar,TER-14,5227828349
+HCP-0352,Sandeep,Rao,Oncology,Tier 2,29,Breach Candy Medical Centre,Patna,Bihar,TER-14,3693916084
+HCP-0353,Kiran,Kulkarni,Dermatology,Tier 3,14,Global Clinic,Patna,Bihar,TER-14,7666022005
+HCP-0354,Sunil,Kapoor,Cardiology,Tier 3,5,Breach Candy Medical Centre,Bhagalpur,Bihar,TER-14,5035765954
+HCP-0355,Dhruv,Khanna,Nephrology,Tier 2,21,Aster Clinic,Muzaffarpur,Bihar,TER-14,8107258941
+HCP-0356,Pankaj,Gupta,Oncology,Tier 2,27,City Institute of Medical Sciences,Gaya,Bihar,TER-14,8274219704
+HCP-0357,Jyoti,Subramaniam,Psychiatry,Tier 2,19,Apollo Multispecialty Hospital,Muzaffarpur,Bihar,TER-14,6596578419
+HCP-0358,Sapna,Subramaniam,Gastroenterology,Tier 3,11,Sunshine Clinic,Gaya,Bihar,TER-14,6673086213
+HCP-0359,Varun,Thakur,Psychiatry,Tier 1,28,Sunshine Clinic,Gaya,Bihar,TER-14,9019515562
+HCP-0360,Ramesh,Agarwal,Pulmonology,Tier 1,19,Continental Super Specialty Hospital,Bhagalpur,Bihar,TER-14,3442428958
+HCP-0361,Nisha,Singh,Psychiatry,Tier 2,19,Rainbow Medical Centre,Patna,Bihar,TER-14,6471691689
+HCP-0362,Ramesh,Dubey,Dermatology,Tier 3,9,Kokilaben Clinic,Patna,Bihar,TER-14,7846365089
+HCP-0363,Madhuri,Patil,Neurology,Tier 3,10,Sunshine Super Specialty Hospital,Gaya,Bihar,TER-14,3958590550
+HCP-0364,Smita,Singh,Rheumatology,Tier 2,15,Care Medical Centre,Gaya,Bihar,TER-14,3910678913
+HCP-0365,Komal,Mukherjee,Cardiology,Tier 1,19,Care Medical Centre,Bhagalpur,Bihar,TER-14,1036351450
+HCP-0366,Preeti,Venkatesh,Nephrology,Tier 3,14,Kokilaben Clinic,Bhagalpur,Bihar,TER-14,2082326234
+HCP-0367,Dinesh,Chatterjee,Oncology,Tier 3,2,Sagar Institute of Medical Sciences,Bhubaneswar,Odisha,TER-15,8900070153
+HCP-0368,Varun,Deshpande,Dermatology,Tier 2,10,Hinduja Multispecialty Hospital,Puri,Odisha,TER-15,8046300793
+HCP-0369,Kiran,Thakur,Nephrology,Tier 3,6,Sagar Super Specialty Hospital,Cuttack,Odisha,TER-15,9699264134
+HCP-0370,Harsh,Mishra,Oncology,Tier 3,3,Metro Institute of Medical Sciences,Puri,Odisha,TER-15,4504756453
+HCP-0371,Sarita,Banerjee,Psychiatry,Tier 3,18,Lilavati Super Specialty Hospital,Rourkela,Odisha,TER-15,3397657114
+HCP-0372,Madhuri,Verma,Pulmonology,Tier 3,12,Care Hospital,Cuttack,Odisha,TER-15,6249538855
+HCP-0373,Preeti,Pandey,Neurology,Tier 3,10,Metro Multispecialty Hospital,Rourkela,Odisha,TER-15,5800834865
+HCP-0374,Lakshmi,Patil,Rheumatology,Tier 3,17,KIMS Healthcare,Bhubaneswar,Odisha,TER-15,8218541928
+HCP-0375,Gopal,Singh,Endocrinology,Tier 3,8,Hinduja Clinic,Cuttack,Odisha,TER-15,9532593594
+HCP-0376,Sarita,Mehta,Psychiatry,Tier 3,7,Hinduja Institute of Medical Sciences,Rourkela,Odisha,TER-15,1249166485
+HCP-0377,Rahul,Srivastava,Rheumatology,Tier 3,17,Continental Super Specialty Hospital,Cuttack,Odisha,TER-15,1378134712
+HCP-0378,Hemant,Saxena,Psychiatry,Tier 3,2,Fortis Healthcare,Puri,Odisha,TER-15,1818520766
+HCP-0379,Hemant,Narayan,Neurology,Tier 2,12,Medanta Clinic,Rourkela,Odisha,TER-15,2314754322
+HCP-0380,Sunita,Bhat,Psychiatry,Tier 3,15,Star Medical Centre,Rourkela,Odisha,TER-15,9166381136
+HCP-0381,Vivek,Agarwal,Oncology,Tier 3,9,Columbia Asia Institute of Medical Sciences,Bhubaneswar,Odisha,TER-15,5230025371
+HCP-0382,Anita,Patil,Dermatology,Tier 3,3,Wockhardt Institute of Medical Sciences,Rourkela,Odisha,TER-15,9798613995
+HCP-0383,Manish,Nair,Cardiology,Tier 3,5,Breach Candy Clinic,Bhubaneswar,Odisha,TER-15,2633177480
+HCP-0384,Pankaj,Subramaniam,Cardiology,Tier 2,21,Star Hospital,Rourkela,Odisha,TER-15,5884080139
+HCP-0385,Deepak,Mukherjee,Dermatology,Tier 3,5,Medanta Clinic,Rourkela,Odisha,TER-15,6161147047
+HCP-0386,Harsh,Agarwal,Psychiatry,Tier 1,37,Sterling Multispecialty Hospital,Cuttack,Odisha,TER-15,2007192464
+HCP-0387,Pooja,Iyer,Psychiatry,Tier 3,4,Continental Healthcare,Cuttack,Odisha,TER-15,9912264204
+HCP-0388,Kiran,Thakur,Nephrology,Tier 2,22,Fortis Hospital,Rourkela,Odisha,TER-15,4492574713
+HCP-0389,Kunal,Yadav,Neurology,Tier 2,11,Medanta Super Specialty Hospital,Puri,Odisha,TER-15,1197092148
+HCP-0390,Manish,Thakur,Neurology,Tier 2,27,Aster Institute of Medical Sciences,Puri,Odisha,TER-15,5694190173
+HCP-0391,Anand,Iyer,Psychiatry,Tier 3,14,Rainbow Super Specialty Hospital,Rourkela,Odisha,TER-15,1716309186
+HCP-0392,Usha,Singh,Endocrinology,Tier 3,15,Metro Clinic,Bhubaneswar,Odisha,TER-15,8208643631
+HCP-0393,Smita,Khanna,Cardiology,Tier 2,23,Sterling Hospital,Cuttack,Odisha,TER-15,9107154202
+HCP-0394,Sanjay,Mishra,Cardiology,Tier 3,12,Sagar Healthcare,Cuttack,Odisha,TER-15,3655316364
+HCP-0395,Shyam,Das,Oncology,Tier 3,19,City Hospital,Cuttack,Odisha,TER-15,9639948905
+HCP-0396,Ramesh,Chopra,Endocrinology,Tier 3,17,Hinduja Medical Centre,Visakhapatnam,Andhra Pradesh,TER-16,2194675791
+HCP-0397,Kamal,Thakur,Gastroenterology,Tier 2,22,Ruby Hall Super Specialty Hospital,Visakhapatnam,Andhra Pradesh,TER-16,7756133581
+HCP-0398,Sapna,Malhotra,Psychiatry,Tier 2,11,Wockhardt Clinic,Visakhapatnam,Andhra Pradesh,TER-16,9743831553
+HCP-0399,Nilesh,Reddy,Rheumatology,Tier 3,18,Global Medical Centre,Tirupati,Andhra Pradesh,TER-16,6758924930
+HCP-0400,Nilesh,Banerjee,Neurology,Tier 3,13,Rainbow Clinic,Guntur,Andhra Pradesh,TER-16,1489726608
+HCP-0401,Pranav,Sharma,Nephrology,Tier 2,30,Medanta Hospital,Tirupati,Andhra Pradesh,TER-16,4852057916
+HCP-0402,Nilesh,Venkatesh,Oncology,Tier 3,10,City Medical Centre,Visakhapatnam,Andhra Pradesh,TER-16,1805492785
+HCP-0403,Mohan,Pillai,Gastroenterology,Tier 3,5,Continental Clinic,Tirupati,Andhra Pradesh,TER-16,9125023089
+HCP-0404,Aniket,Mukherjee,Psychiatry,Tier 2,24,Sunshine Hospital,Visakhapatnam,Andhra Pradesh,TER-16,7808041613
+HCP-0405,Vishal,Mehta,Endocrinology,Tier 3,5,Wockhardt Institute of Medical Sciences,Vijayawada,Andhra Pradesh,TER-16,9086117171
+HCP-0406,Arjun,Pandey,Gastroenterology,Tier 3,14,Hinduja Multispecialty Hospital,Tirupati,Andhra Pradesh,TER-16,1572827654
+HCP-0407,Raghav,Prasad,Pulmonology,Tier 3,19,Care Medical Centre,Tirupati,Andhra Pradesh,TER-16,1862812038
+HCP-0408,Harsh,Krishnan,Endocrinology,Tier 2,24,Global Institute of Medical Sciences,Vijayawada,Andhra Pradesh,TER-16,8030335064
+HCP-0409,Tushar,Shetty,Rheumatology,Tier 3,19,Lilavati Super Specialty Hospital,Guntur,Andhra Pradesh,TER-16,9644783539
+HCP-0410,Smita,Joshi,Cardiology,Tier 1,23,Continental Super Specialty Hospital,Vijayawada,Andhra Pradesh,TER-16,2076151332
+HCP-0411,Raghav,Yadav,Pulmonology,Tier 2,19,Ruby Hall Hospital,Visakhapatnam,Andhra Pradesh,TER-16,2670255496
+HCP-0412,Kapil,Subramaniam,Cardiology,Tier 2,20,Breach Candy Super Specialty Hospital,Guntur,Andhra Pradesh,TER-16,3371357111
+HCP-0413,Divya,Rao,Psychiatry,Tier 3,13,Continental Healthcare,Vijayawada,Andhra Pradesh,TER-16,3591527330
+HCP-0414,Vivek,Yadav,Dermatology,Tier 3,7,Sunshine Healthcare,Vijayawada,Andhra Pradesh,TER-16,5807588013
+HCP-0415,Sneha,Roy,Endocrinology,Tier 2,8,Hinduja Clinic,Tirupati,Andhra Pradesh,TER-16,1664885408
+HCP-0416,Aarti,Deshpande,Rheumatology,Tier 1,30,Metro Healthcare,Bilaspur,Chhattisgarh,TER-17,2537965898
+HCP-0417,Ravi,Chatterjee,Endocrinology,Tier 2,24,Narayana Clinic,Raipur,Chhattisgarh,TER-17,2732663107
+HCP-0418,Ritu,Rajan,Neurology,Tier 2,14,Continental Healthcare,Bilaspur,Chhattisgarh,TER-17,7573442717
+HCP-0419,Nilesh,Srivastava,Cardiology,Tier 3,13,Ruby Hall Medical Centre,Raipur,Chhattisgarh,TER-17,3667740351
+HCP-0420,Dinesh,Kulkarni,Dermatology,Tier 2,16,Global Institute of Medical Sciences,Korba,Chhattisgarh,TER-17,2214741296
+HCP-0421,Nilesh,Khanna,Pulmonology,Tier 2,23,Fortis Multispecialty Hospital,Korba,Chhattisgarh,TER-17,6121801720
+HCP-0422,Deepak,Agarwal,Pulmonology,Tier 3,4,KIMS Institute of Medical Sciences,Raipur,Chhattisgarh,TER-17,8238760130
+HCP-0423,Rahul,Sen,Oncology,Tier 3,6,Apollo Clinic,Raipur,Chhattisgarh,TER-17,8373893128
+HCP-0424,Neha,Singh,Nephrology,Tier 2,26,Columbia Asia Multispecialty Hospital,Raipur,Chhattisgarh,TER-17,7045736747
+HCP-0425,Mohan,Saxena,Oncology,Tier 2,25,Apollo Institute of Medical Sciences,Raipur,Chhattisgarh,TER-17,9785427977
+HCP-0426,Pradeep,Mukherjee,Nephrology,Tier 2,17,Continental Clinic,Raipur,Chhattisgarh,TER-17,6933126143
+HCP-0427,Suresh,Chopra,Gastroenterology,Tier 2,20,Global Multispecialty Hospital,Bhilai,Chhattisgarh,TER-17,5913767020
+HCP-0428,Kapil,Narayan,Cardiology,Tier 3,5,Fortis Hospital,Bhilai,Chhattisgarh,TER-17,5660584367
+HCP-0429,Vandana,Narayan,Oncology,Tier 2,13,Narayana Medical Centre,Bhilai,Chhattisgarh,TER-17,2085517692
+HCP-0430,Nandini,Ghosh,Pulmonology,Tier 3,19,Max Multispecialty Hospital,Korba,Chhattisgarh,TER-17,3884866198
+HCP-0431,Nisha,Narayan,Neurology,Tier 3,6,Star Institute of Medical Sciences,Bilaspur,Chhattisgarh,TER-17,2007310926
+HCP-0432,Neha,Rao,Psychiatry,Tier 2,27,Star Multispecialty Hospital,Bilaspur,Chhattisgarh,TER-17,7729620601
+HCP-0433,Tarun,Agarwal,Gastroenterology,Tier 1,37,Sunshine Institute of Medical Sciences,Bhilai,Chhattisgarh,TER-17,7168105904
+HCP-0434,Rohit,Krishnan,Psychiatry,Tier 3,16,Kokilaben Super Specialty Hospital,Korba,Chhattisgarh,TER-17,6606958660
+HCP-0435,Anand,Thakur,Nephrology,Tier 3,19,KIMS Multispecialty Hospital,Jamshedpur,Jharkhand,TER-18,3691307645
+HCP-0436,Suresh,Mukherjee,Rheumatology,Tier 3,20,KIMS Hospital,Bokaro,Jharkhand,TER-18,7664045502
+HCP-0437,Vijay,Chopra,Endocrinology,Tier 3,14,Columbia Asia Super Specialty Hospital,Dhanbad,Jharkhand,TER-18,8976459315
+HCP-0438,Aparna,Mukherjee,Neurology,Tier 1,36,Columbia Asia Super Specialty Hospital,Ranchi,Jharkhand,TER-18,3938451957
+HCP-0439,Rohit,Malhotra,Rheumatology,Tier 2,23,Kokilaben Hospital,Jamshedpur,Jharkhand,TER-18,3094407076
+HCP-0440,Rashmi,Banerjee,Gastroenterology,Tier 1,27,Sterling Clinic,Dhanbad,Jharkhand,TER-18,4786236940
+HCP-0441,Mamta,Kulkarni,Pulmonology,Tier 2,16,Metro Healthcare,Dhanbad,Jharkhand,TER-18,3448819206
+HCP-0442,Arjun,Menon,Dermatology,Tier 3,14,Columbia Asia Healthcare,Dhanbad,Jharkhand,TER-18,7038046278
+HCP-0443,Pradeep,Bose,Rheumatology,Tier 3,18,Manipal Clinic,Ranchi,Jharkhand,TER-18,1711271599
+HCP-0444,Mamta,Chauhan,Endocrinology,Tier 2,19,City Institute of Medical Sciences,Jamshedpur,Jharkhand,TER-18,4508795329
+HCP-0445,Gopal,Deshmukh,Psychiatry,Tier 3,17,KIMS Healthcare,Bokaro,Jharkhand,TER-18,8874242713
+HCP-0446,Sunita,Verma,Endocrinology,Tier 3,18,Fortis Healthcare,Jamshedpur,Jharkhand,TER-18,1630780803
+HCP-0447,Swati,Chatterjee,Rheumatology,Tier 3,11,Max Medical Centre,Ranchi,Jharkhand,TER-18,9558906999
+HCP-0448,Nikhil,Banerjee,Rheumatology,Tier 3,20,Continental Medical Centre,Jamshedpur,Jharkhand,TER-18,7488857684
+HCP-0449,Padma,Deshmukh,Rheumatology,Tier 3,9,Wockhardt Clinic,Ranchi,Jharkhand,TER-18,1567851370
+HCP-0450,Bhavna,Mukherjee,Endocrinology,Tier 3,7,Sterling Healthcare,Ranchi,Jharkhand,TER-18,3576180666
+HCP-0451,Vijay,Mukherjee,Dermatology,Tier 3,6,City Healthcare,Bokaro,Jharkhand,TER-18,4554178984
+HCP-0452,Vishal,Krishnan,Pulmonology,Tier 3,13,Fortis Institute of Medical Sciences,Bokaro,Jharkhand,TER-18,7570511906
+HCP-0453,Madhuri,Khanna,Rheumatology,Tier 2,21,Manipal Multispecialty Hospital,Ranchi,Jharkhand,TER-18,4689605624
+HCP-0454,Chitra,Pandey,Cardiology,Tier 2,26,Sagar Hospital,Ranchi,Jharkhand,TER-18,3232360156
+HCP-0455,Rahul,Subramaniam,Oncology,Tier 3,5,Manipal Clinic,Dhanbad,Jharkhand,TER-18,6384311581
+HCP-0456,Tarun,Ghosh,Nephrology,Tier 2,14,Breach Candy Healthcare,Bokaro,Jharkhand,TER-18,3072183247
+HCP-0457,Kamal,Chopra,Nephrology,Tier 2,30,Wockhardt Institute of Medical Sciences,Dhanbad,Jharkhand,TER-18,6281827528
+HCP-0458,Nikhil,Nair,Oncology,Tier 2,25,City Institute of Medical Sciences,Silchar,Assam,TER-19,1223565082
+HCP-0459,Hemant,Sharma,Endocrinology,Tier 3,15,Max Hospital,Jorhat,Assam,TER-19,2129971523
+HCP-0460,Varun,Gupta,Oncology,Tier 3,3,Continental Super Specialty Hospital,Silchar,Assam,TER-19,7418263314
+HCP-0461,Nandini,Chatterjee,Cardiology,Tier 2,27,Narayana Institute of Medical Sciences,Dibrugarh,Assam,TER-19,5449848690
+HCP-0462,Priya,Agarwal,Nephrology,Tier 1,26,Star Clinic,Jorhat,Assam,TER-19,9655933303
+HCP-0463,Arun,Roy,Pulmonology,Tier 2,19,Aster Medical Centre,Silchar,Assam,TER-19,6130446648
+HCP-0464,Dhruv,Sharma,Oncology,Tier 2,25,Max Healthcare,Guwahati,Assam,TER-19,6558769264
+HCP-0465,Sandeep,Mukherjee,Pulmonology,Tier 3,16,Wockhardt Healthcare,Silchar,Assam,TER-19,8626138802
+HCP-0466,Aniket,Patel,Nephrology,Tier 3,14,Care Super Specialty Hospital,Guwahati,Assam,TER-19,5270048042
+HCP-0467,Pranav,Kulkarni,Neurology,Tier 3,10,Columbia Asia Multispecialty Hospital,Guwahati,Assam,TER-19,5694439775
+HCP-0468,Nilesh,Deshmukh,Endocrinology,Tier 1,25,Kokilaben Medical Centre,Jorhat,Assam,TER-19,2155671697
+HCP-0469,Dinesh,Rao,Gastroenterology,Tier 3,9,Aster Medical Centre,Dibrugarh,Assam,TER-19,1984438848
+HCP-0470,Jatin,Jain,Dermatology,Tier 2,10,Star Institute of Medical Sciences,Guwahati,Assam,TER-19,5114549022
+HCP-0471,Sameer,Jain,Rheumatology,Tier 2,23,Narayana Super Specialty Hospital,Silchar,Assam,TER-19,6498703287
+HCP-0472,Ekta,Verma,Oncology,Tier 1,32,Fortis Healthcare,Jorhat,Assam,TER-19,6786562040
+HCP-0473,Vishal,Mehta,Dermatology,Tier 3,12,Rainbow Hospital,Jorhat,Assam,TER-19,9640701016
+HCP-0474,Heena,Nair,Rheumatology,Tier 2,13,Global Multispecialty Hospital,Silchar,Assam,TER-19,6313472215
+HCP-0475,Nitin,Deshmukh,Psychiatry,Tier 2,14,Breach Candy Institute of Medical Sciences,Jorhat,Assam,TER-19,8525623511
+HCP-0476,Mohan,Chauhan,Rheumatology,Tier 3,20,Star Medical Centre,Dibrugarh,Assam,TER-19,4496922300
+HCP-0477,Sandeep,Das,Oncology,Tier 3,6,Sunshine Medical Centre,Dibrugarh,Assam,TER-19,1041842844
+HCP-0478,Rohit,Shah,Neurology,Tier 3,11,Aster Healthcare,Jorhat,Assam,TER-19,5499877198
+HCP-0479,Anjali,Singh,Nephrology,Tier 2,28,Medanta Clinic,Jorhat,Assam,TER-19,8492970833
+HCP-0480,Rashmi,Roy,Nephrology,Tier 3,2,Breach Candy Hospital,Rishikesh,Uttarakhand,TER-20,3600929253
+HCP-0481,Yogesh,Thakur,Nephrology,Tier 3,12,Star Healthcare,Rishikesh,Uttarakhand,TER-20,8458323087
+HCP-0482,Arjun,Jain,Endocrinology,Tier 2,28,Hinduja Clinic,Haridwar,Uttarakhand,TER-20,7750131975
+HCP-0483,Sanjay,Reddy,Gastroenterology,Tier 2,18,Care Multispecialty Hospital,Rishikesh,Uttarakhand,TER-20,8346255879
+HCP-0484,Mohan,Chauhan,Neurology,Tier 3,15,Narayana Medical Centre,Haldwani,Uttarakhand,TER-20,4668811953
+HCP-0485,Archana,Rajan,Dermatology,Tier 2,13,Wockhardt Hospital,Haridwar,Uttarakhand,TER-20,1410400118
+HCP-0486,Pankaj,Roy,Oncology,Tier 1,18,Aster Healthcare,Dehradun,Uttarakhand,TER-20,1666898313
+HCP-0487,Arjun,Bhat,Nephrology,Tier 2,28,Manipal Medical Centre,Haldwani,Uttarakhand,TER-20,1732755730
+HCP-0488,Pallavi,Kulkarni,Psychiatry,Tier 3,19,Ruby Hall Medical Centre,Rishikesh,Uttarakhand,TER-20,7861571879
+HCP-0489,Hemant,Ghosh,Pulmonology,Tier 3,13,Sterling Healthcare,Rishikesh,Uttarakhand,TER-20,5679598896
+HCP-0490,Komal,Mishra,Cardiology,Tier 2,24,Continental Super Specialty Hospital,Dehradun,Uttarakhand,TER-20,5880373288
+HCP-0491,Chitra,Sharma,Psychiatry,Tier 3,11,Apollo Super Specialty Hospital,Haldwani,Uttarakhand,TER-20,9620935604
+HCP-0492,Gopal,Roy,Gastroenterology,Tier 3,14,Wockhardt Medical Centre,Haridwar,Uttarakhand,TER-20,2129491690
+HCP-0493,Gaurav,Chatterjee,Rheumatology,Tier 3,11,Care Institute of Medical Sciences,Rishikesh,Uttarakhand,TER-20,6449549092
+HCP-0494,Neha,Mehta,Dermatology,Tier 2,27,Ruby Hall Multispecialty Hospital,Haldwani,Uttarakhand,TER-20,3113106808
+HCP-0495,Shalini,Singh,Cardiology,Tier 3,5,Lilavati Multispecialty Hospital,Haridwar,Uttarakhand,TER-20,1035236295
+HCP-0496,Priya,Bose,Oncology,Tier 2,23,Kokilaben Clinic,Rishikesh,Uttarakhand,TER-20,5431277186
+HCP-0497,Shalini,Singh,Oncology,Tier 2,25,Sterling Medical Centre,Dehradun,Uttarakhand,TER-20,8909351013
+HCP-0498,Jatin,Sharma,Gastroenterology,Tier 2,22,Columbia Asia Institute of Medical Sciences,Haldwani,Uttarakhand,TER-20,5271497065
+HCP-0499,Vandana,Khanna,Gastroenterology,Tier 1,27,Star Multispecialty Hospital,Haldwani,Uttarakhand,TER-20,9315981171
+HCP-0500,Usha,Gupta,Pulmonology,Tier 3,10,Sterling Institute of Medical Sciences,Dehradun,Uttarakhand,TER-20,2283392443

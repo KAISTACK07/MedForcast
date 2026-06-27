@@ -1,0 +1,15 @@
+feature_name,importance
+rolling_mean_3,44.35
+avg_unit_price,38.57
+territory_encoded,4.48
+lag_1,2.95
+month,2.2
+rolling_std_3,1.81
+day_of_week,1.53
+quarter,0.92
+lag_6,0.77
+lag_3,0.76
+drug_encoded,0.65
+n_transactions,0.56
+year,0.45
+is_quarter_end,0.0

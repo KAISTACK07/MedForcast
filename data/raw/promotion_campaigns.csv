@@ -1,0 +1,16 @@
+campaign_id,campaign_name,drug_name,channel,start_date,end_date,budget,hcps_targeted,hcps_reached,prescriptions_before,prescriptions_after,revenue_before,revenue_after
+CAMP-001,Email Campaign - Keytruda,Keytruda,Email,2023-02-01,2023-05-13,363110.62,135,110,443,611,792562.2,1125438.32
+CAMP-002,Rep Visit Campaign - Humira,Humira,Rep Visit,2023-04-15,2023-08-07,292688.32,126,114,879,1336,1772583.22,2836133.15
+CAMP-003,Conference Campaign - Lipitor,Lipitor,Conference,2023-06-01,2023-08-17,153661.12,224,67,913,684,2857985.71,2057749.71
+CAMP-004,Digital Campaign - Januvia,Januvia,Digital,2023-07-15,2023-10-08,228856.28,128,87,467,523,1397176.64,1606753.14
+CAMP-005,Journal Ad Campaign - Advair,Advair,Journal Ad,2023-09-01,2023-10-19,387883.53,162,93,1137,1193,1705687.33,1842142.32
+CAMP-006,Email Campaign - Nexium,Nexium,Email,2023-10-15,2024-01-17,311446.21,102,76,646,807,922080.36,1180262.86
+CAMP-007,Rep Visit Campaign - Enbrel,Enbrel,Rep Visit,2023-11-01,2023-12-22,349050.64,87,60,608,699,2041489.8,2408957.96
+CAMP-008,Conference Campaign - Lyrica,Lyrica,Conference,2024-01-10,2024-04-26,345056.51,119,85,851,1004,2864844.6,3495110.41
+CAMP-009,Digital Campaign - Herceptin,Herceptin,Digital,2024-02-15,2024-04-01,336676.04,140,123,847,1228,1556608.91,2412743.81
+CAMP-010,Journal Ad Campaign - Crestor,Crestor,Journal Ad,2024-03-20,2024-05-31,438845.0,186,89,962,913,912327.59,894081.04
+CAMP-011,Email Campaign - Opdivo,Opdivo,Email,2024-05-01,2024-07-04,277700.23,129,51,1070,941,1338210.1,1137478.58
+CAMP-012,Rep Visit Campaign - Lantus,Lantus,Rep Visit,2024-06-15,2024-09-07,360925.78,117,40,1169,958,4000680.86,3120531.07
+CAMP-013,Conference Campaign - Copaxone,Copaxone,Conference,2024-08-01,2024-09-29,351567.81,169,123,448,537,590784.7,738480.88
+CAMP-014,Digital Campaign - Remicade,Remicade,Digital,2024-09-10,2025-01-05,466563.6,138,75,954,973,2426952.16,2548299.77
+CAMP-015,Journal Ad Campaign - Avastin,Avastin,Journal Ad,2024-11-01,2025-01-12,151025.49,170,85,974,954,2916880.82,2946049.63
