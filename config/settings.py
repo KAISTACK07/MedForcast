@@ -27,14 +27,12 @@ from urllib.parse import quote_plus
 
 DB_URI = (
     f"postgresql://{DB_USER}:{quote_plus(DB_PASSWORD)}"
-    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}?sslmode=require"
 )
 
-# ── AWS ────────────────────────────────────────────────────────────────────────
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "")
-AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
-S3_BUCKET = os.getenv("S3_BUCKET", "pharma-analytics-data")
+# ── Azure ────────────────────────────────────────────────────────────────────────
+AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING", "")
+AZURE_CONTAINER_NAME = os.getenv("AZURE_CONTAINER_NAME", "pharma-analytics-data")
 
 # ── Kaggle ─────────────────────────────────────────────────────────────────────
 KAGGLE_USERNAME = os.getenv("KAGGLE_USERNAME", "")

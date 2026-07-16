@@ -1,12 +1,12 @@
 {
   "n_clusters": 5,
-  "silhouette_score": 0.3471,
+  "silhouette_score": 0.3713,
   "total_hcps": 500,
   "segments": {
-    "High Potential": 162,
-    "Loyal HCPs": 44,
-    "At Risk": 205,
-    "Champions": 6,
-    "Low Value": 83
+    "High Potential": 164,
+    "Loyal HCPs": 45,
+    "Low Value": 246,
+    "At Risk": 39,
+    "Champions": 6
   }
 }

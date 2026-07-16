@@ -267,9 +267,9 @@ def generate_hcps(territories_df):
 def generate_sales(territories_df):
     print("[3/6] Generating pharma_sales.csv...")
     
-    # Date range: Jan 2024 to Nov 2025
+    # Date range: Jan 2024 to Dec 2025
     start = datetime(2024, 1, 1)
-    end = datetime(2025, 11, 28)
+    end = datetime(2025, 12, 31)
     
     # Generate all dates in range
     all_dates = pd.date_range(start, end, freq="D")
@@ -372,9 +372,9 @@ def generate_sales(territories_df):
 def generate_prescriptions(hcp_df):
     print("[4/6] Generating prescription_data.csv...")
     
-    # Date range: Jan 2023 to Dec 2023
-    start = datetime(2023, 1, 1)
-    end = datetime(2023, 12, 28)
+    # Date range: Jan 2024 to Dec 2025
+    start = datetime(2024, 1, 1)
+    end = datetime(2025, 12, 28)
     all_dates = pd.date_range(start, end, freq="D")
     
     # Build drug lists by therapeutic class
@@ -477,9 +477,9 @@ def generate_prescriptions(hcp_df):
 def generate_rep_activity(territories_df, hcp_df):
     print("[5/6] Generating rep_activity.csv...")
     
-    # Date range: Jan 2023 to Dec 2023
-    start = datetime(2023, 1, 1)
-    end = datetime(2023, 12, 28)
+    # Date range: Jan 2024 to Dec 2025
+    start = datetime(2024, 1, 1)
+    end = datetime(2025, 12, 28)
     all_dates = pd.date_range(start, end, freq="D")
     # Remove Sundays
     work_dates = [d for d in all_dates if d.dayofweek < 6]
@@ -621,11 +621,11 @@ def generate_promotions():
     random.shuffle(outcome_profiles)
     
     rows = []
-    # Spread campaigns across 2023-2024
+    # Spread campaigns across 2024-2025
     base_dates = [
-        "2023-02-01", "2023-04-15", "2023-06-01", "2023-07-15", "2023-09-01",
-        "2023-10-15", "2023-11-01", "2024-01-10", "2024-02-15", "2024-03-20",
-        "2024-05-01", "2024-06-15", "2024-08-01", "2024-09-10", "2024-11-01",
+        "2024-01-15", "2024-02-20", "2024-04-01", "2024-05-15", "2024-07-01",
+        "2024-08-15", "2024-10-01", "2024-11-15", "2025-01-10", "2025-02-20",
+        "2025-04-01", "2025-05-15", "2025-07-01", "2025-08-15", "2025-10-01",
     ]
     
     for i in range(15):

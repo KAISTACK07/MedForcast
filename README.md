@@ -1,211 +1,216 @@
 <div align="center">
-
-# Pharma Sales Forecasting & HCP Intelligence Platform
-
-*A commercial analytics platform for the pharmaceutical industry to forecast drug demand, segment providers, and measure commercial effectiveness.*
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![XGBoost](https://img.shields.io/badge/XGBoost-1976D2?style=for-the-badge&logo=xgboost&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" />
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
+  <img src="https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/XGBoost-17A8F5?style=for-the-badge&logo=xgboost&logoColor=white" />
 </div>
 
-## Project Overview
-A commercial analytics platform for the pharmaceutical industry that forecasts drug demand at the territory level, segments Healthcare Providers (HCPs) based on prescribing behavior, evaluates sales representative effectiveness, and measures promotional ROI.
+<h1 align="center">MedForcast: Cloud-Native Pharmaceutical Analytics</h1>
+<p align="center">
+  <b>An end-to-end Data Engineering, Machine Learning, and Business Intelligence pipeline for the pharmaceutical industry.</b><br>
+  Designed to optimize territory performance, segment healthcare professionals, and forecast drug demand.
+</p>
 
-## Project Highlights
-* **500 HCPs** analysed
-* **20 Territories**
-* **50 Sales Representatives**
-* **6 Interactive Power BI Dashboards**
-* **XGBoost** Demand Forecasting
-* **K-Means** HCP Segmentation
-* **PostgreSQL** Data Warehouse
-* **Feature Importance Analysis**
+---
 
-## Business Problem
-Pharmaceutical companies struggle to accurately forecast territory-level drug demand, optimally segment healthcare providers (HCPs), and evaluate the ROI of promotions and sales rep effectiveness. This platform bridges the gap by leveraging machine learning and advanced data analytics to provide actionable commercial intelligence.
+## 📖 Project Overview
+**MedForcast** is a comprehensive, cloud-hosted pharmaceutical data warehouse and analytics platform. It demonstrates a complete end-to-end data lifecycle: extracting raw commercial data, running a Python-based ETL pipeline, engineering advanced features, training predictive Machine Learning models, and serving the results through an Azure PostgreSQL database into an interactive Power BI dashboard.
 
-## Business Impact
-This platform empowers pharmaceutical commercial teams to:
-* **Optimize Supply Chain:** Accurately forecast territory drug demand to prevent stockouts and minimize excess inventory holding costs.
-* **Target HCPs Effectively:** Focus marketing and sales efforts on high-value and loyal prescribers, while deploying retention strategies for at-risk accounts.
-* **Boost Rep Productivity:** Identify best practices from top-performing sales representatives and provide targeted coaching to under-performers based on empirical activity data.
-* **Maximize Marketing ROI:** Allocate promotional budgets toward the most effective channels and campaigns by rigorously measuring their financial returns.
+## 🎯 Business Problem
+Pharmaceutical companies struggle to allocate marketing resources efficiently. Commercial teams need to know:
+1. **Which Healthcare Professionals (HCPs)** have the highest potential for prescription growth?
+2. **Which territories** are underperforming despite high sales representative activity?
+3. **What is the forecasted demand** for specific blockbuster drugs across different regions?
 
-## Key Features
-* **Territory-Level Demand Forecasting:** Predict future drug demand using XGBoost, improving supply chain efficiency.
-* **HCP Segmentation:** Cluster HCPs using K-Means into actionable segments (e.g., Champions, Loyal, At Risk).
-* **Rep Effectiveness Analysis:** Calculate composite productivity scoring with prescription lift analysis.
-* **Promotion ROI Measurement:** Track the effectiveness and financial return of various promotional campaigns.
-* **Interactive Dashboards:** Comprehensive Power BI dashboards for exploring metrics across all commercial domains.
+## 💡 Solution
+This project solves these problems by:
+- **Segmenting HCPs** using K-Means clustering (RFM analysis) to identify "Champions" and "At-Risk" providers.
+- **Forecasting Demand** using XGBoost to predict future sales volumes with 86.7% accuracy.
+- **Centralizing Data** in a cloud-native Azure PostgreSQL data warehouse.
+- **Visualizing Insights** through a multi-page, executive-ready Power BI dashboard.
 
-## Architecture
+---
+
+## ✨ Features
+- **Automated ETL Pipeline:** Cleanses and transforms 6 raw datasets into a relational star schema.
+- **Advanced Machine Learning:** Integrates K-Means clustering and XGBoost forecasting directly into the data model.
+- **Cloud Infrastructure:** Hosted on Azure Database for PostgreSQL (Flexible Server).
+- **Interactive Dashboards:** 4 pages of deep-dive analytics (Executive, Territory, Commercial, and Forecasting).
+
+## 🛠 Tech Stack
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Language** | Python 3 | ETL, Data Processing, ML |
+| **Data Processing** | Pandas, NumPy | Data cleaning, feature engineering |
+| **Machine Learning** | Scikit-Learn, XGBoost | K-Means segmentation, Demand forecasting |
+| **Database** | PostgreSQL | Relational data warehousing |
+| **Cloud** | Microsoft Azure | Cloud database hosting (Flexible Server) |
+| **Visualization** | Power BI | Interactive business intelligence dashboards |
+
+---
+
+## 🏗 Architecture
 
 ```mermaid
-flowchart LR
-    A[Data Ingestion<br>Kaggle / API / Synthetic] --> B[(Storage<br>S3 / PostgreSQL)]
-    B --> C[Processing<br>Pandas / NumPy]
-    C --> D[Machine Learning<br>XGBoost / K-Means]
-    D --> E[Automation<br>AWS Lambda]
-    E --> F[Visualization<br>Power BI]
+graph TD
+    A[Raw Pharmaceutical CSV Data] --> B(Python ETL Pipeline<br>Cleaning & Feature Engineering)
+    B --> C[(Azure Database for PostgreSQL)]
+    
+    C --> D[SQL Analytics<br>Star Schema]
+    C --> E[Machine Learning<br>K-Means + XGBoost]
+    
+    D --> F{Power BI Dashboards}
+    E --> F
+    
+    F --> G[Executive Summary]
+    F --> H[Territory Performance]
+    F --> I[Rep Productivity & ROI]
+    F --> J[Demand Forecasting]
+
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style B fill:#3776AB,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#0089D6,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#316192,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#F7931E,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#F2C811,stroke:#333,stroke-width:2px,color:#000
 ```
 
-## Tech Stack
+---
 
-* **Programming:** Python, SQL
-* **Database:** PostgreSQL
-* **Machine Learning:** XGBoost, K-Means, SciPy
-* **Analytics:** Pandas, NumPy
-* **Visualization:** Power BI
-* **Cloud:** AWS S3, AWS Lambda
+## ⚙️ ETL Pipeline
+The pipeline is orchestrated via `run_pipeline.py` and performs the following:
+1. **Ingestion:** Reads dirty pharmaceutical transaction logs, HCP master data, and territory mappings.
+2. **Cleaning:** Handles missing values, standardizes date formats, and removes duplicate transactions.
+3. **Feature Engineering:** Calculates RFM (Recency, Frequency, Monetary) scores for HCPs, rolling averages for sales, and lag features for time-series forecasting.
+4. **Cloud Load:** Uses SQLAlchemy to automatically drop constraints, upload dimension/fact tables, and recreate the schema in Azure PostgreSQL.
 
-## Machine Learning Pipeline
-The project utilizes a multi-step ML pipeline:
-1. **Data Cleaning:** Process raw ingestions into a standardized format.
-2. **Feature Engineering:** Generate temporal, lag, rolling statistical, and RFM features.
-3. **Model Training & Inference:** Train models and generate predictions.
+<details>
+<summary><b>Click to expand: View Data Dictionary</b></summary>
 
-### ML Models
-1. **Demand Forecasting** — XGBoost Regressor for territory-level drug demand prediction, leveraging temporal features, lag features, and rolling statistics. Feature importance is also extracted automatically.
-2. **HCP Segmentation** — K-Means clustering assigning providers to segments (Champions, Loyal, High Potential, At Risk, Low Value).
-3. **Rep Effectiveness** — Composite productivity scoring incorporating prescription lift analysis.
+- `pharma_sales`: Fact table containing daily drug revenue and units sold.
+- `prescriptions`: Fact table tracking individual Rx written by HCPs.
+- `rep_activity`: Fact table logging sales rep visits and campaign outcomes.
+- `hcp_master`: Dimension table for healthcare professionals.
+- `territories`: Dimension table for geographic regions.
+- `hcp_segments`: Output table from the ML pipeline.
+</details>
 
-## Model Performance
-The XGBoost Demand Forecasting model achieves the following metrics on the test set:
-* **MAE:** 5.22
-* **MAPE:** 13.1%
-* **R²:** 0.8767
-* **Forecast Accuracy:** 86.9%
+---
 
-## Dashboard Overview
-The Power BI application consists of 6 primary pages.
+## 🗄 Database Schema
+The database follows a strict **Star Schema** optimized for Power BI.
 
-### 1. Executive Summary
-* **Business objective:** Provide leadership with a high-level overview of overall commercial performance.
-* **KPIs:** Total Revenue, Total Prescriptions, Forecast Accuracy, Overall ROI.
-* **Main visuals:** Revenue trends, KPI scorecards, Year-over-Year growth charts.
-* **Business value:** Enables quick, data-driven decisions at the executive level.
-<!-- Executive Summary Screenshot -->
+![Power BI Data Model](docs/images/data_model.png)
+*(The relational model connecting Dimension tables like `territories` and `hcp_master` to Fact tables like `pharma_sales` and `prescriptions`.)*
 
-### 2. Territory Performance
-* **Business objective:** Track and compare sales performance across geographical regions.
-* **KPIs:** Territory Revenue, Market Share, Target Attainment.
-* **Main visuals:** Map visuals of territory sales, bar charts comparing territories, performance gauges.
-* **Business value:** Helps regional managers identify over-performing and under-performing areas for resource reallocation.
-<!-- Territory Performance Screenshot -->
+---
 
-### 3. HCP Intelligence
-* **Business objective:** Understand healthcare provider prescribing behavior to optimize engagement strategies.
-* **KPIs:** HCP Segment Distribution, Average Prescriptions per HCP, Churn Risk.
-* **Main visuals:** Segmentation scatter plots (RFM), segment breakdown pie charts, individual HCP profiles.
-* **Business value:** Allows sales and marketing teams to tailor messaging based on provider segment and maximize engagement efficiency.
-<!-- HCP Intelligence Screenshot -->
+## 🤖 Machine Learning Pipeline
 
-### 4. Rep Productivity
-* **Business objective:** Evaluate the effectiveness of sales representatives.
-* **KPIs:** Calls per Day, Prescription Lift, Cost per Call, Composite Productivity Score.
-* **Main visuals:** Rep leaderboard, activity vs. results scatter plots, individual rep performance drill-downs.
-* **Business value:** Identifies top performers for best-practice sharing and under-performers for targeted coaching.
-<!-- Rep Productivity Screenshot -->
+### 1. HCP Segmentation (K-Means)
+- **Objective:** Group HCPs based on their prescribing behavior.
+- **Features:** RFM (Recency, Frequency, Monetary Value).
+- **Result:** 5 distinct clusters identified (Champions, Loyal HCPs, High Potential, At Risk, Low Value) with a Silhouette Score of 0.37.
 
-### 5. Promotion ROI
-* **Business objective:** Measure the financial return of various marketing and promotional campaigns.
-* **KPIs:** Campaign ROI, Incremental Revenue, Cost per Acquisition.
-* **Main visuals:** ROI by channel bar charts, cost vs. revenue area charts, campaign performance tables.
-* **Business value:** Optimizes the marketing budget by identifying the most profitable promotional channels.
-<!-- Promotion ROI Screenshot -->
+### 2. Demand Forecasting (XGBoost)
+- **Objective:** Predict monthly sales volume for specific drugs.
+- **Features:** Lagged sales, rolling averages, seasonality indicators.
+- **Result:** Achieved a **MAPE of 13.26%** and an **R² of 0.87**, yielding an overall forecast accuracy of 86.74%.
 
-### 6. Demand Forecasting
-* **Business objective:** Visualize future drug demand predictions to ensure adequate supply.
-* **KPIs:** Predicted Units Sold, Forecasted Revenue, Forecast Error Rates.
-* **Main visuals:** Actual vs. Forecast line charts, future demand projections by drug and territory.
-* **Business value:** Prevents stockouts and reduces inventory holding costs through accurate demand planning.
-<!-- Demand Forecasting Screenshot -->
+---
 
-## Project Structure
+## ☁️ Azure Deployment
+The entire data warehouse is hosted on **Azure Database for PostgreSQL - Flexible Server**.
+- **Server:** `medforcast-server-lakshay.postgres.database.azure.com`
+- **Security:** Encrypted via SSL (`sslmode=require`).
+- **Automation:** Configured to automatically receive updated ML predictions via Python's SQLAlchemy integration.
 
-```
-pharma-analytics/
-├── config/               # Configuration files
-├── dashboards/           # Power BI files & DAX measures
-├── data/
-│   ├── raw/              # Raw ingested data
-│   ├── processed/        # Cleaned & feature-engineered
-│   └── output/           # ML outputs & KPIs
-├── docs/                 # Documentation
-├── sql/                  # SQL scripts for data analysis
-├── src/
-│   ├── cloud/            # AWS utilities
-│   ├── database/         # Schema & db loaders
-│   ├── ingestion/        # Data loaders (Kaggle, FDA, Synthetic)
-│   ├── models/           # ML models (demand_forecaster, hcp_segmenter, rep_analyzer)
-│   ├── processing/       # Cleaning & feature engineering
-│   └── utils/            # Helper functions
-├── .env.example          # Environment variables template
-├── regenerate_data.py    # Data generation script
-├── requirements.txt      # Python dependencies
-├── run_pipeline.py       # Full ML pipeline runner
-├── upload_core_tables.py # Postgres core tables uploader
-├── upload_to_postgres.py # Postgres general uploader
-└── validate_data.py      # Data validation script
-```
+![Azure Server](docs/images/azure_portal.png)
 
-## Setup & Installation
+---
 
+## 📊 Dashboard Showcase
+
+### Executive Summary
+High-level KPIs, revenue trends, and top brand performance.
+![Executive Dashboard](docs/images/executive_dashboard.png)
+
+### Territory Performance
+Geospatial analysis of revenue and prescription distribution across Indian territories.
+![Territory Dashboard](docs/images/territory_dashboard.png)
+
+### HCP Intelligence & Commercial ROI
+Visualizing the K-Means clustering results and tracking Sales Rep campaign efficiency (111% ROI).
+![HCP Dashboard](docs/images/hcp_dashboard.png)
+
+### Demand Forecasting
+Actual vs. Predicted demand utilizing the XGBoost model outputs, highlighting feature importance.
+![Forecasting Dashboard](docs/images/forecasting_dashboard.png)
+
+---
+
+## 📈 Business Insights
+1. **Targeting Efficiency:** The "Champions" segment accounts for only 1.2% of total HCPs but drives 11.18% of total revenue. Marketing spend should be aggressively shifted here.
+2. **Channel ROI:** Email campaigns showed the highest incremental revenue at the lowest cost, driving a total campaign ROI of 111%.
+3. **Forecasting Reliability:** The XGBoost model successfully captures the quarterly seasonality of `Keytruda` and `Opdivo`, allowing supply chain teams to optimize inventory 3 months in advance.
+
+---
+
+## 🚀 Installation & Running the Project
+
+### 1. Clone the repository
 ```bash
-# Create and activate virtual environment
+git clone https://github.com/yourusername/MedForcast.git
+cd MedForcast
+```
+
+### 2. Install dependencies
+```bash
 python -m venv venv
-venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
-# Set up environment variables
-copy .env.example .env
-# Edit .env with your credentials
-
-# Create database and apply schema
-psql -U postgres -c "CREATE DATABASE pharma_analytics;"
-psql -U postgres -d pharma_analytics -f src/database/schema.sql
 ```
 
-## Running the Project
-
-To execute the entire data processing and machine learning pipeline, run:
-
-```bash
-python run_pipeline.py
+### 3. Configure Environment
+Rename `.env.example` to `.env` and add your Azure PostgreSQL credentials:
+```env
+DB_HOST=your_server.postgres.database.azure.com
+DB_NAME=medforcast
+DB_USER=medadmin
+DB_PASSWORD=your_password
 ```
 
-This script will automatically:
-1. Clean raw data
-2. Engineer features for models
-3. Run the HCP K-Means segmentation
-4. Run the XGBoost demand forecasting
-
-*To populate the PostgreSQL database for the Power BI dashboards:*
+### 4. Run the Pipeline
+Upload the core tables, run the ML pipeline, and sync the results to Azure:
 ```bash
+# 1. Upload dimension tables
 python upload_core_tables.py
+
+# 2. Run ETL, Feature Engineering, and Machine Learning
+python run_pipeline.py
+
+# 3. Upload processed facts and ML outputs to Azure
 python upload_to_postgres.py
 ```
 
-## Outputs
-The pipeline outputs the following key files for Power BI ingestion into `data/output/`:
-* `demand_forecasts.csv`
-* `territory_forecasts.csv`
-* `hcp_segments.csv`
-* `feature_importance.csv`
-* Model artifacts (`.pkl` files) and visualization charts (`.png`).
+---
 
-## Future Improvements
-* Integrate real-time API streaming for daily sales data updates.
-* Deploy the ML pipeline as serverless AWS Lambda functions triggered by S3 uploads.
-* Implement a Deep Learning model (e.g., LSTM) for advanced time-series demand forecasting comparison.
-* Add automated data quality checks integrated into a CI/CD pipeline.
+## 📉 Power BI Setup
+1. Open the `dashboards/MedForcast.pbix` file.
+2. Go to **Transform Data** > **Data Source Settings**.
+3. Change the PostgreSQL server address to your Azure Endpoint.
+4. Enter your database credentials.
+5. Click **Refresh** to load the live data from Azure!
 
-## License
-Distributed under the MIT License. See `LICENSE` for more information.
+---
+
+## 🔮 Future Improvements
+- Implement Apache Airflow for automated daily orchestration of the ETL pipeline.
+- Migrate the local XGBoost training to Azure Machine Learning (AML) workspaces.
+- Add a Streamlit web app for real-time, interactive what-if forecasting scenarios.
+
+---
+**Author:** [Your Name/Lakshay]  
+*Data Engineer & Analytics Professional* | [LinkedIn](https://linkedin.com/in/yourprofile) | [Portfolio](https://yourportfolio.com)

@@ -58,7 +58,7 @@ WITH territory_sales AS (
         territory_id,
         SUM(revenue) AS territory_sales_revenue
     FROM pharma_sales
-    WHERE sale_date >= '2023-01-01' AND sale_date < '2024-01-01'
+    WHERE sale_date >= '2024-01-01' AND sale_date < '2026-01-01'
     GROUP BY territory_id
 ),
 territory_rx AS (

@@ -214,7 +214,7 @@ def generate_rep_activity(hcp_df: pd.DataFrame,
         hcps = territory_hcps.get(territory, [])
 
         for month in range(1, months + 1):
-            year = 2023 if month <= 12 else 2024
+            year = 2024 if month <= 12 else 2025
             m = month if month <= 12 else month - 12
 
             n_activities = int(np.random.lognormal(mean=3.0, sigma=0.6))
@@ -256,7 +256,7 @@ def generate_prescription_data(hcp_df: pd.DataFrame,
         mult = tier_multiplier.get(hcp["tier"], 1.0)
 
         for month in range(1, months + 1):
-            year = 2023 if month <= 12 else 2024
+            year = 2024 if month <= 12 else 2025
             m = month if month <= 12 else month - 12
 
             for drug in prescribed_drugs:

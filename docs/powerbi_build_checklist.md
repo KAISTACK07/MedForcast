@@ -90,7 +90,7 @@
 5. **Estimated build time:** 1.5 hours.
 6. **Common implementation mistakes:**
    - Joining `rep_activity` directly to `pharma_sales`. Since they are at different grains, filtering must pass through the `territories` dimension table.
-   - Ignoring the date range mismatch (Sales data covers 2022-2023, while Rep Activity covers 2023-only). Sales filtering should be localized to 2023 when comparing Rep performance.
+   - All datasets (Sales, Rep Activity, Prescriptions) share the unified **2024-2025** timeline. No date-range alignment issues.
 7. **Validation checks after implementation:**
    - Ensure the total distinct number of reps equals **50**.
    - Verify `Avg Duration` falls within the logical 10 to 90 minute bounds.

@@ -6,6 +6,7 @@ Runs the complete pipeline:
   2. Feature Engineering (processed -> features)
   3. HCP Segmentation (K-Means -> hcp_segments.csv)
   4. Demand Forecasting (XGBoost -> demand_forecasts.csv, territory_forecasts.csv)
+  5. Azure Sync (optional — uploads outputs to Azure Blob Storage)
 """
 import os
 import sys
@@ -19,10 +20,12 @@ if sys.platform == "win32":
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_ROOT)
 
+from config.settings import AZURE_STORAGE_CONNECTION_STRING
 from src.processing.cleaner import clean_all
 from src.processing.feature_engineer import engineer_all_features
 from src.models.hcp_segmenter import run_hcp_segmentation
 from src.models.demand_forecaster import run_demand_forecasting
+from src.cloud.azure_storage import upload_directory, ensure_container
 
 
 def main():
@@ -31,21 +34,21 @@ def main():
     print("=" * 70)
 
     # Step 1: Clean raw data -> data/processed/
-    print("\n[STEP 1/4] Cleaning raw data...")
+    print("\n[STEP 1/5] Cleaning raw data...")
     cleaned = clean_all()
     print(f"   Done. Cleaned {len(cleaned)} datasets")
     for name, df in cleaned.items():
         print(f"      {name:20s} -> {len(df):>8,} rows")
 
     # Step 2: Feature engineering -> data/processed/ (features)
-    print("\n[STEP 2/4] Engineering features...")
+    print("\n[STEP 2/5] Engineering features...")
     features = engineer_all_features()
     print(f"   Done. Created features for {len(features)} models")
     for name, df in features.items():
         print(f"      {name:20s} -> {len(df):>8,} rows, {len(df.columns):>3} columns")
 
     # Step 3: HCP Segmentation -> data/output/hcp_segments.csv
-    print("\n[STEP 3/4] Running HCP K-Means segmentation...")
+    print("\n[STEP 3/5] Running HCP K-Means segmentation...")
     hcp_results = run_hcp_segmentation()
     print(f"   Done. Segmented {hcp_results['metrics']['total_hcps']} HCPs into {hcp_results['metrics']['n_clusters']} segments")
     print(f"      Silhouette Score: {hcp_results['metrics']['silhouette_score']}")
@@ -53,7 +56,7 @@ def main():
     print(hcp_results['summary'].to_string(index=False))
 
     # Step 4: Demand Forecasting -> data/output/demand_forecasts.csv
-    print("\n[STEP 4/4] Running XGBoost demand forecasting...")
+    print("\n[STEP 4/5] Running XGBoost demand forecasting...")
     demand_results = run_demand_forecasting()
     print(f"   Done. Demand forecasting complete")
     print(f"      MAE:               {demand_results['metrics']['mae']}")
@@ -76,6 +79,19 @@ def main():
     print("   Page 3 (HCP Intelligence): data/output/hcp_segments.csv")
     print("   Page 5 (Promotion ROI):    data/raw/promotion_campaigns.csv (already exists)")
     print("   Page 6 (Forecasting):      data/output/demand_forecasts.csv + territory_forecasts.csv")
+
+    # Step 5: Optional Azure Blob Storage sync
+    print("\n[STEP 5/5] Azure Blob Storage sync...")
+    if AZURE_STORAGE_CONNECTION_STRING:
+        if ensure_container():
+            results = upload_directory(output_dir, prefix="output")
+            uploaded = sum(1 for v in results.values() if v)
+            print(f"   Done. Synced {uploaded}/{len(results)} output files to Azure.")
+        else:
+            print("   Failed to connect to Azure container. Skipping sync.")
+    else:
+        print("   Skipped — AZURE_STORAGE_CONNECTION_STRING not configured in .env")
+        print("   (Set it to enable automatic cloud sync after pipeline runs)")
 
 
 if __name__ == "__main__":
