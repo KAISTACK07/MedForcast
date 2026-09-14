@@ -122,6 +122,6 @@ def clean_all() -> dict:
 
 if __name__ == "__main__":
     results = clean_all()
-    print("\n📊 Cleaning Summary:")
+    print("\n Cleaning Summary:")
     for name, df in results.items():
         print(f"  {name:20s} → {len(df):>8,} rows")
