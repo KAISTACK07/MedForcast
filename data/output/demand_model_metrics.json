@@ -1,7 +1,7 @@
 {
-  "mae": 5.33,
-  "mape": 0.1326,
-  "mape_pct": 13.26,
-  "r2": 0.8676,
-  "forecast_accuracy_pct": 86.74
+  "mae": 9.24,
+  "mape": 0.2279,
+  "mape_pct": 22.79,
+  "r2": 0.6287,
+  "forecast_accuracy_pct": 77.21
 }

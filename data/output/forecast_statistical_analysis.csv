@@ -1,0 +1,13 @@
+pair,description,spearman_rho,p_value,n,p_adjusted,is_significant,status,finding
+units_sold vs lag_1,Current sales associated with previous month sales,0.8905,0.0,9200,0.0,True,significant,"Statistically significantly positively associated with (rho=0.8905, p=0.00e+00, n=9200)"
+units_sold vs lag_3,Current sales associated with 3-month lagged sales,0.8924,0.0,8400,0.0,True,significant,"Statistically significantly positively associated with (rho=0.8924, p=0.00e+00, n=8400)"
+units_sold vs rolling_mean_3,Current sales associated with 3-month rolling mean,0.9185,0.0,9200,0.0,True,significant,"Statistically significantly positively associated with (rho=0.9185, p=0.00e+00, n=9200)"
+units_sold vs avg_unit_price,Units sold associated with average unit price,-0.8985,0.0,9200,0.0,True,significant,"Statistically significantly negatively associated with (rho=-0.8985, p=0.00e+00, n=9200)"
+units_sold vs n_transactions,Units sold associated with transaction count,-0.0086,0.4103544416676142,9200,0.554452,False,not significant,"Not statistically significantly associated with (rho=-0.0086, p=5.54e-01, n=9200)"
+units_sold vs month,Units sold associated with month of year,-0.0212,0.04156720006665416,9200,0.071258,False,not significant,"Not statistically significantly associated with (rho=-0.0212, p=7.13e-02, n=9200)"
+units_sold vs quarter,Units sold associated with quarter,-0.0424,4.8052399859390885e-05,9200,0.000115,True,significant,"Statistically significantly negatively associated with (rho=-0.0424, p=1.15e-04, n=9200)"
+territory_sales vs rep_total_activities,Territory sales associated with rep total activities,0.0336,0.8167532578949535,50,0.891004,False,not significant,"Not statistically significantly associated with (rho=0.0336, p=8.91e-01, n=50)"
+territory_sales vs rep_positive_outcome_rate,Territory sales associated with rep positive outcome rate,-0.1176,0.4158388052730836,50,0.554452,False,not significant,"Not statistically significantly associated with (rho=-0.1176, p=5.54e-01, n=50)"
+territory_sales vs rep_total_visits,Territory sales associated with rep total visits,0.0427,0.7682872804447103,50,0.891004,False,not significant,"Not statistically significantly associated with (rho=0.0427, p=8.91e-01, n=50)"
+territory_sales vs rep_hcp_coverage,Territory sales associated with HCP coverage by reps,0.3312,0.018818192665380266,50,0.037636,True,significant,"Statistically significantly positively associated with (rho=0.3312, p=3.76e-02, n=50)"
+territory_sales vs rep_samples_distributed,Territory sales associated with samples distributed by reps,0.0188,0.8966428552828876,50,0.896643,False,not significant,"Not statistically significantly associated with (rho=0.0188, p=8.97e-01, n=50)"

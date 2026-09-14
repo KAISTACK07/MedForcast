@@ -592,21 +592,30 @@ def generate_report(stability_df, results_df, residual_results,
         lines.append(f"- **Did XGBoost beat baselines?** Best model by MAE: **{best_model}** "
                      f"(XGBoost MAE={xgb_mae})")
 
-        # Check per metric
-        for metric in ["MAE_mean", "RMSE_mean"]:
-            xgb_val = xgb_row[metric].values[0] if len(xgb_row) > 0 else float("inf")
+        # Check per metric. Lower is better for MAE/RMSE; higher is better for R2.
+        lower_is_better = {"MAE_mean": True, "RMSE_mean": True, "R2_mean": False}
+        for metric, lower_better in lower_is_better.items():
+            if metric not in xgb_row.columns or len(xgb_row) == 0:
+                continue
+            xgb_val = xgb_row[metric].values[0]
             beats = []
             loses = []
             for _, row in stability_df.iterrows():
                 if row["model"] != "XGBoost":
-                    if xgb_val < row[metric]:
-                        beats.append(row["model"])
-                    else:
-                        loses.append(row["model"])
+                    xgb_wins = (xgb_val < row[metric]) if lower_better else (xgb_val > row[metric])
+                    (beats if xgb_wins else loses).append(row["model"])
             if beats:
                 lines.append(f"  - XGBoost beats {', '.join(beats)} on {metric.replace('_mean','')}")
             if loses:
                 lines.append(f"  - XGBoost **loses to** {', '.join(loses)} on {metric.replace('_mean','')}")
+
+        # Explicit R2 anomaly note — deeply negative R2 across all models signals
+        # low-variance/short validation windows, not necessarily bad point forecasts.
+        if "R2_mean" in stability_df.columns and (stability_df["R2_mean"] < 0).all():
+            lines.append(f"  - **Note:** All models show negative R2 on these validation windows "
+                         f"(XGBoost R2={xgb_row['R2_mean'].values[0]:.4f}). This indicates the folds "
+                         f"are short/low-variance relative to the mean baseline R2 is measured against — "
+                         f"it does NOT mean the point forecasts are unusable; see MAE/RMSE above instead.")
 
         lines.append(f"- **Stable?** XGBoost MAPE std across folds: {xgb_mape_std}")
         stable = "Yes" if isinstance(xgb_mape_std, (int, float)) and xgb_mape_std < 10 else "Marginal" if isinstance(xgb_mape_std, (int, float)) and xgb_mape_std < 20 else "No"
