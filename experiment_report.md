@@ -16,20 +16,24 @@
 | 3 | 4800 | 1200 | 2024-02-01 00:00:00 to 2025-01-01 00:00:00 | 2025-02-01 00:00:00 to 2025-04-01 00:00:00 | 0 |
 | 4 | 6000 | 3200 | 2024-02-01 00:00:00 to 2025-04-01 00:00:00 | 2025-05-01 00:00:00 to 2025-12-01 00:00:00 | 0 |
 
-## Model Comparison (mean over all folds and series)
+## Model Comparison — Pooled (authoritative)
+
+> All territories and drugs are pooled together within each fold BEFORE computing metrics, 
+> so R2 here is calculated on hundreds of points per model per fold, not on tiny 3-point 
+> groups. Use this table, not the diagnostic one further down, for the headline comparison.
 
 | Model | MAPE | MAE | RMSE | R2 |
 |-------|------|-----|------|----|
-| MovingAvg3 | 24.19% | 18.19 | 20.89 | -3.8236 |
-| Naive | 28.74% | 21.99 | 25.16 | -3.1025 |
-| SeasonalNaive | 24.50% | 20.12 | 23.73 | -4.1556 |
-| XGBoost | 22.76% | 17.68 | 20.35 | -4.3103 |
+| MovingAvg3 | 24.19% | 18.19 | 27.48 | 0.8247 |
+| Naive | 28.74% | 21.99 | 34.01 | 0.7326 |
+| SeasonalNaive | 24.50% | 20.12 | 30.58 | 0.8063 |
+| XGBoost | 22.76% | 17.68 | 26.97 | 0.8308 |
 
 > **Note on MAPE instability:** Monthly unit counts can be near zero, which makes MAPE 
 > explode even for a fine model. When actuals are near zero, treat RMSE and MAE as the 
 > PRIMARY comparison metrics.
 
-## Stability Analysis
+## Stability Analysis — Pooled (authoritative)
 
 | Model | MAPE Mean | MAPE Median | MAPE Std | Best Fold | Worst Fold |
 |-------|-----------|-------------|----------|-----------|------------|
@@ -37,6 +41,22 @@
 | Naive | 28.74% | 28.37% | 3.28% | Fold 2 | Fold 0 |
 | SeasonalNaive | 24.50% | 24.50% | 0.26% | Fold 4 | Fold 3 |
 | XGBoost | 22.76% | 22.17% | 2.38% | Fold 4 | Fold 0 |
+
+## Model Comparison — Fine-Grained by Territory×Drug (diagnostic only)
+
+> Each row here averages metrics computed on individual (territory, drug, fold) groups, 
+> most with only 3 data points. MAE/MAPE are still roughly informative at this grain, but 
+> **R2 is not** — with n=3, R2 can swing to extreme values (e.g. -444) purely from sampling 
+> noise in a tiny group's own variance, not from model quality. Do not use this table's R2 
+> for conclusions; it is kept only for transparency and territory/drug drill-down (see Error 
+> Analysis below, which uses MAE — a metric that stays meaningful at small n).
+
+| Model | MAPE | MAE | RMSE | R2 (unreliable) |
+|-------|------|-----|------|------------------|
+| MovingAvg3 | 24.19% | 18.19 | 20.89 | -3.8236 |
+| Naive | 28.74% | 21.99 | 25.16 | -3.1025 |
+| SeasonalNaive | 24.50% | 20.12 | 23.73 | -4.1556 |
+| XGBoost | 22.76% | 17.68 | 20.35 | -4.3103 |
 
 ## Error Analysis
 
@@ -124,8 +144,8 @@ Spearman rank correlations (Benjamini-Hochberg FDR applied):
 - All existing columns and schemas
 
 **New tables added:**
-- `forecast_model_comparison` — model × fold × territory metrics
-- `forecast_validation_results` — fold details and stability analysis
+- `forecast_model_comparison` — model × fold metrics, pooled across all territories/drugs (statistically valid R2; see `data/output/forecast_model_comparison_by_series.csv` for the fine-grained, diagnostic-only per-territory/drug breakdown)
+- `forecast_validation_results` — fold details and stability analysis (pooled)
 - `forecast_error_analysis` — residual analysis by territory, month, drug
 - `forecast_uncertainty` — prediction intervals with coverage metrics
 - `forecast_statistical_analysis` — Spearman correlations and significance
@@ -134,11 +154,12 @@ Spearman rank correlations (Benjamini-Hochberg FDR applied):
 
 ## Conclusion
 
+*(Based on the Pooled model comparison above — the statistically valid one.)*
+
 - **Did XGBoost beat baselines?** Best model by MAE: **XGBoost** (XGBoost MAE=17.6835)
   - XGBoost beats MovingAvg3, Naive, SeasonalNaive on MAE
   - XGBoost beats MovingAvg3, Naive, SeasonalNaive on RMSE
-  - XGBoost **loses to** MovingAvg3, Naive, SeasonalNaive on R2
-  - **Note:** All models show negative R2 on these validation windows (XGBoost R2=-4.3103). This indicates the folds are short/low-variance relative to the mean baseline R2 is measured against — it does NOT mean the point forecasts are unusable; see MAE/RMSE above instead.
+  - XGBoost beats MovingAvg3, Naive, SeasonalNaive on R2
 - **Stable?** XGBoost MAPE std across folds: 2.3777
   - Stability assessment: **Yes**
 - **Where it fails:** Worst territory=TER-01, worst month=2025-01-01 00:00:00

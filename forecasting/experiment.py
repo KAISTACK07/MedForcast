@@ -68,13 +68,23 @@ def _get_available_features(df):
 def run_fold_comparison(df, folds):
     """
     For each fold, train ONE global XGBoost on the temporal train slice,
-    predict validation, compute baselines per series, align to identical rows,
-    and compute all 4 metrics per model per territory.
+    predict validation, compute baselines per series, align to identical rows.
+
+    Returns TWO comparison tables:
+      - results_df: per (model, fold, territory, drug) — fine-grained, useful
+        for drill-down (worst territory/drug), but each group has very few
+        points (often 3), so its R2 is NOT statistically meaningful and
+        should not be used for the headline model comparison.
+      - pooled_results_df: per (model, fold) — all territories/drugs pooled
+        together BEFORE computing metrics, giving hundreds of points per
+        R2 calculation instead of 3. This is the statistically correct way
+        to compute R2 and is the authoritative comparison table.
     """
-    all_results = []          # model comparison rows
+    all_results = []          # fine-grained per-series rows (diagnostics only)
     all_xgb_preds = []        # XGBoost predictions for residual/uncertainty analysis
     feature_cols = _get_available_features(df)
     fold_details = []         # per-fold short-series info
+    pooled_results = []       # pooled per-(model,fold) rows — authoritative
 
     for fold_info in folds:
         fold_idx = fold_info["fold"]
@@ -104,6 +114,10 @@ def run_fold_comparison(df, folds):
         # ── Baselines per (drug_name, territory_id) series ───────────────────
         series_groups = val_df.groupby(["drug_name", "territory_id"])
         short_series_count = 0
+
+        # Accumulators for this fold's pooled metrics (filled across all series)
+        pooled_actual = {"XGBoost": [], "Naive": [], "MovingAvg3": [], "SeasonalNaive": []}
+        pooled_pred = {"XGBoost": [], "Naive": [], "MovingAvg3": [], "SeasonalNaive": []}
 
         for (drug, terr), val_group in series_groups:
             # Get full chronological series up to end of validation
@@ -181,7 +195,8 @@ def run_fold_comparison(df, folds):
                 short_series_count += 1
                 continue
 
-            # Compute metrics for each model
+            # Compute metrics for each model (fine-grained, diagnostics only —
+            # each group has very few points, so R2 here is not reliable)
             for model_name, preds in [("XGBoost", xgb_aligned),
                                        ("Naive", naive_aligned),
                                        ("MovingAvg3", ma_aligned)]:
@@ -199,6 +214,9 @@ def run_fold_comparison(df, folds):
                     "R2": m["R2"],
                     "n_rows": n_common,
                 })
+                # Accumulate raw values for this fold's pooled (authoritative) metrics
+                pooled_actual[model_name].extend(actual_aligned.tolist())
+                pooled_pred[model_name].extend(preds.tolist())
 
             if has_seasonal:
                 if len(sn_aligned) == n_common:
@@ -214,6 +232,26 @@ def run_fold_comparison(df, folds):
                         "R2": m["R2"],
                         "n_rows": n_common,
                     })
+                    pooled_actual["SeasonalNaive"].extend(actual_aligned.tolist())
+                    pooled_pred["SeasonalNaive"].extend(sn_aligned.tolist())
+
+        # ── Pooled (authoritative) metrics for this fold ─────────────────────
+        # Compute each model's metrics ONCE, on all territories/drugs pooled
+        # together, instead of averaging many unstable tiny-sample metrics.
+        for model_name in pooled_actual:
+            n_pooled = len(pooled_actual[model_name])
+            if n_pooled == 0:
+                continue
+            m = all_metrics(pooled_actual[model_name], pooled_pred[model_name])
+            pooled_results.append({
+                "model": model_name,
+                "fold": fold_idx,
+                "MAPE": m["MAPE"],
+                "MAE": m["MAE"],
+                "RMSE": m["RMSE"],
+                "R2": m["R2"],
+                "n_rows": n_pooled,
+            })
 
         # Store XGBoost preds for residual/uncertainty analysis
         all_xgb_preds.append(val_df)
@@ -229,10 +267,11 @@ def run_fold_comparison(df, folds):
         logger.info(f"Fold {fold_idx}: train={len(train_idx)}, val={len(val_idx)}, short_series_skipped={short_series_count}")
 
     results_df = pd.DataFrame(all_results)
+    pooled_results_df = pd.DataFrame(pooled_results)
     xgb_preds_df = pd.concat(all_xgb_preds, ignore_index=True) if all_xgb_preds else pd.DataFrame()
     fold_details_df = pd.DataFrame(fold_details)
 
-    return results_df, xgb_preds_df, fold_details_df
+    return results_df, pooled_results_df, xgb_preds_df, fold_details_df
 
 
 def compute_stability(results_df):
@@ -444,11 +483,20 @@ def write_to_database(engine, dataframes_dict):
             logger.error(f"❌ Failed to write {table_name}: {e}")
 
 
-def generate_report(stability_df, results_df, residual_results,
+def generate_report(pooled_stability_df, grouped_stability_df, results_df, residual_results,
                     stat_results, uncertainty_metrics, fold_details_df,
                     df, xgb_preds_df, test_fold_df,
                     leakage_check_results, db_status):
-    """Generate experiment_report.md from real computed results."""
+    """Generate experiment_report.md from real computed results.
+
+    pooled_stability_df: metrics computed by pooling ALL territories/drugs
+      together per fold BEFORE scoring (hundreds of points per R2). This is
+      the statistically correct, authoritative comparison.
+    grouped_stability_df: the OLD approach — metrics averaged across many
+      tiny (territory, drug, fold) groups (often n=3). Kept only as a
+      diagnostic appendix; its R2 is NOT reliable and must not drive
+      conclusions.
+    """
     lines = []
     lines.append("# MedForcast Experiment Report\n")
 
@@ -467,12 +515,15 @@ def generate_report(stability_df, results_df, residual_results,
         lines.append(f"| {row['fold']} | {row['train_rows']} | {row['val_rows']} | {row['train_dates']} | {row['val_dates']} | {row['short_series_skipped']} |")
     lines.append("")
 
-    # Model comparison
-    lines.append("## Model Comparison (mean over all folds and series)\n")
-    if not stability_df.empty:
+    # Model comparison — POOLED (authoritative)
+    lines.append("## Model Comparison — Pooled (authoritative)\n")
+    lines.append("> All territories and drugs are pooled together within each fold BEFORE computing metrics, ")
+    lines.append("> so R2 here is calculated on hundreds of points per model per fold, not on tiny 3-point ")
+    lines.append("> groups. Use this table, not the diagnostic one further down, for the headline comparison.\n")
+    if not pooled_stability_df.empty:
         lines.append("| Model | MAPE | MAE | RMSE | R2 |")
         lines.append("|-------|------|-----|------|----|")
-        for _, row in stability_df.iterrows():
+        for _, row in pooled_stability_df.iterrows():
             lines.append(f"| {row['model']} | {row['MAPE_mean']:.2f}% | {row['MAE_mean']:.2f} | {row['RMSE_mean']:.2f} | {row['R2_mean']:.4f} |")
         lines.append("")
 
@@ -481,14 +532,29 @@ def generate_report(stability_df, results_df, residual_results,
         lines.append("> explode even for a fine model. When actuals are near zero, treat RMSE and MAE as the ")
         lines.append("> PRIMARY comparison metrics.\n")
 
-    # Stability
-    lines.append("## Stability Analysis\n")
-    if not stability_df.empty:
+    # Stability — POOLED (authoritative)
+    lines.append("## Stability Analysis — Pooled (authoritative)\n")
+    if not pooled_stability_df.empty:
         lines.append("| Model | MAPE Mean | MAPE Median | MAPE Std | Best Fold | Worst Fold |")
         lines.append("|-------|-----------|-------------|----------|-----------|------------|")
-        for _, row in stability_df.iterrows():
+        for _, row in pooled_stability_df.iterrows():
             lines.append(f"| {row['model']} | {row['MAPE_mean']:.2f}% | {row['MAPE_median']:.2f}% | "
                          f"{row['MAPE_std']:.2f}% | Fold {row['MAPE_best_fold']} | Fold {row['MAPE_worst_fold']} |")
+        lines.append("")
+
+    # Fine-grained comparison — DIAGNOSTIC ONLY, R2 unreliable
+    lines.append("## Model Comparison — Fine-Grained by Territory×Drug (diagnostic only)\n")
+    lines.append("> Each row here averages metrics computed on individual (territory, drug, fold) groups, ")
+    lines.append("> most with only 3 data points. MAE/MAPE are still roughly informative at this grain, but ")
+    lines.append("> **R2 is not** — with n=3, R2 can swing to extreme values (e.g. -444) purely from sampling ")
+    lines.append("> noise in a tiny group's own variance, not from model quality. Do not use this table's R2 ")
+    lines.append("> for conclusions; it is kept only for transparency and territory/drug drill-down (see Error ")
+    lines.append("> Analysis below, which uses MAE — a metric that stays meaningful at small n).\n")
+    if not grouped_stability_df.empty:
+        lines.append("| Model | MAPE | MAE | RMSE | R2 (unreliable) |")
+        lines.append("|-------|------|-----|------|------------------|")
+        for _, row in grouped_stability_df.iterrows():
+            lines.append(f"| {row['model']} | {row['MAPE_mean']:.2f}% | {row['MAE_mean']:.2f} | {row['RMSE_mean']:.2f} | {row['R2_mean']:.4f} |")
         lines.append("")
 
     # Error analysis
@@ -574,18 +640,22 @@ def generate_report(stability_df, results_df, residual_results,
     lines.append("- All existing output tables: demand_forecasts, hcp_segments, territory_forecasts")
     lines.append("- All existing columns and schemas\n")
     lines.append("**New tables added:**")
-    lines.append("- `forecast_model_comparison` — model × fold × territory metrics")
-    lines.append("- `forecast_validation_results` — fold details and stability analysis")
+    lines.append("- `forecast_model_comparison` — model × fold metrics, pooled across all territories/drugs "
+                 "(statistically valid R2; see `data/output/forecast_model_comparison_by_series.csv` for the "
+                 "fine-grained, diagnostic-only per-territory/drug breakdown)")
+    lines.append("- `forecast_validation_results` — fold details and stability analysis (pooled)")
     lines.append("- `forecast_error_analysis` — residual analysis by territory, month, drug")
     lines.append("- `forecast_uncertainty` — prediction intervals with coverage metrics")
     lines.append("- `forecast_statistical_analysis` — Spearman correlations and significance\n")
     lines.append(f"**Database write status:** {db_status}\n")
 
-    # Conclusion
+    # Conclusion — uses the POOLED (authoritative) table, not the fine-grained
+    # diagnostic one, so R2 here is computed on hundreds of points, not 3.
     lines.append("## Conclusion\n")
-    if not stability_df.empty:
-        xgb_row = stability_df[stability_df["model"] == "XGBoost"]
-        best_model = stability_df.sort_values("MAE_mean").iloc[0]["model"]
+    lines.append("*(Based on the Pooled model comparison above — the statistically valid one.)*\n")
+    if not pooled_stability_df.empty:
+        xgb_row = pooled_stability_df[pooled_stability_df["model"] == "XGBoost"]
+        best_model = pooled_stability_df.sort_values("MAE_mean").iloc[0]["model"]
         xgb_mae = xgb_row["MAE_mean"].values[0] if len(xgb_row) > 0 else "N/A"
         xgb_mape_std = xgb_row["MAPE_std"].values[0] if len(xgb_row) > 0 else "N/A"
 
@@ -600,7 +670,7 @@ def generate_report(stability_df, results_df, residual_results,
             xgb_val = xgb_row[metric].values[0]
             beats = []
             loses = []
-            for _, row in stability_df.iterrows():
+            for _, row in pooled_stability_df.iterrows():
                 if row["model"] != "XGBoost":
                     xgb_wins = (xgb_val < row[metric]) if lower_better else (xgb_val > row[metric])
                     (beats if xgb_wins else loses).append(row["model"])
@@ -609,13 +679,15 @@ def generate_report(stability_df, results_df, residual_results,
             if loses:
                 lines.append(f"  - XGBoost **loses to** {', '.join(loses)} on {metric.replace('_mean','')}")
 
-        # Explicit R2 anomaly note — deeply negative R2 across all models signals
-        # low-variance/short validation windows, not necessarily bad point forecasts.
-        if "R2_mean" in stability_df.columns and (stability_df["R2_mean"] < 0).all():
-            lines.append(f"  - **Note:** All models show negative R2 on these validation windows "
-                         f"(XGBoost R2={xgb_row['R2_mean'].values[0]:.4f}). This indicates the folds "
-                         f"are short/low-variance relative to the mean baseline R2 is measured against — "
-                         f"it does NOT mean the point forecasts are unusable; see MAE/RMSE above instead.")
+        # Explicit R2 note if still negative even after pooling — a real
+        # finding (not a small-sample artifact) worth stating plainly.
+        if "R2_mean" in pooled_stability_df.columns and (pooled_stability_df["R2_mean"] < 0).all():
+            lines.append(f"  - **Note:** Even after pooling (large n), all models show negative R2 on these "
+                         f"validation windows (XGBoost R2={xgb_row['R2_mean'].values[0]:.4f}). Unlike the "
+                         f"small-sample artifact seen in the fine-grained table, this pooled R2 IS statistically "
+                         f"meaningful — it means none of these models explain more variance than simply "
+                         f"predicting each fold's mean. MAE/RMSE above remain the more actionable metrics for "
+                         f"point-forecast quality, but this R2 finding should not be hidden.")
 
         lines.append(f"- **Stable?** XGBoost MAPE std across folds: {xgb_mape_std}")
         stable = "Yes" if isinstance(xgb_mape_std, (int, float)) and xgb_mape_std < 10 else "Marginal" if isinstance(xgb_mape_std, (int, float)) and xgb_mape_std < 20 else "No"
@@ -676,12 +748,17 @@ def run_experiment():
 
     # ── Steps 7-8: Model comparison + stability ─────────────────────────────
     logger.info("[4/8] Running model comparison (XGBoost vs Naive vs MA3 vs SeasonalNaive)...")
-    results_df, xgb_preds_df, fold_details_df = run_fold_comparison(df, folds)
-    logger.info(f"  Total comparison rows: {len(results_df)}")
+    results_df, pooled_results_df, xgb_preds_df, fold_details_df = run_fold_comparison(df, folds)
+    logger.info(f"  Fine-grained comparison rows (diagnostic, small-n): {len(results_df)}")
+    logger.info(f"  Pooled comparison rows (authoritative, large-n): {len(pooled_results_df)}")
 
-    stability_df = compute_stability(results_df)
-    logger.info("  Stability computed:")
-    for _, row in stability_df.iterrows():
+    # Pooled = authoritative (R2 computed on hundreds of points per fold, not 3)
+    pooled_stability_df = compute_stability(pooled_results_df)
+    # Grouped = old approach, kept only as a diagnostic appendix (R2 unreliable)
+    grouped_stability_df = compute_stability(results_df)
+
+    logger.info("  Pooled stability (authoritative):")
+    for _, row in pooled_stability_df.iterrows():
         logger.info(f"    {row['model']:15s} MAPE={row['MAPE_mean']:.2f}% MAE={row['MAE_mean']:.2f} "
                      f"RMSE={row['RMSE_mean']:.2f} R2={row['R2_mean']:.4f}")
 
@@ -722,10 +799,12 @@ def run_experiment():
     logger.info("[8/8] Persisting to database...")
     db_status = "NOT ATTEMPTED"
 
-    # Prepare tables
+    # Prepare tables. forecast_model_comparison uses the POOLED (authoritative)
+    # results so its R2 column is statistically meaningful; the fine-grained
+    # per-series table is saved as a CSV only (see below) for drill-down.
     db_tables = {
-        "forecast_model_comparison": results_df if not results_df.empty else None,
-        "forecast_validation_results": stability_df if not stability_df.empty else None,
+        "forecast_model_comparison": pooled_results_df if not pooled_results_df.empty else None,
+        "forecast_validation_results": pooled_stability_df if not pooled_stability_df.empty else None,
         "forecast_error_analysis": None,
         "forecast_uncertainty": None,
         "forecast_statistical_analysis": stat_results if isinstance(stat_results, pd.DataFrame) and not stat_results.empty else None,
@@ -770,6 +849,17 @@ def run_experiment():
             tdf.to_csv(csv_path, index=False)
             logger.info(f"  Saved {table_name}.csv ({len(tdf)} rows)")
 
+    # Save the fine-grained (diagnostic, small-n) tables too, for transparency
+    # and territory/drug drill-down. NOT written to the DB — R2 in these is
+    # not statistically reliable; see forecast_model_comparison for the
+    # authoritative pooled numbers.
+    if not results_df.empty:
+        results_df.to_csv(os.path.join(DATA_OUTPUT, "forecast_model_comparison_by_series.csv"), index=False)
+        logger.info(f"  Saved forecast_model_comparison_by_series.csv ({len(results_df)} rows, diagnostic only)")
+    if not grouped_stability_df.empty:
+        grouped_stability_df.to_csv(os.path.join(DATA_OUTPUT, "forecast_validation_results_by_series.csv"), index=False)
+        logger.info(f"  Saved forecast_validation_results_by_series.csv ({len(grouped_stability_df)} rows, diagnostic only)")
+
     # Save extended forecast output
     if not extended_df.empty:
         ext_path = os.path.join(DATA_OUTPUT, "demand_forecasts_extended.csv")
@@ -797,7 +887,8 @@ def run_experiment():
 
     # ── Step 14: Generate report ─────────────────────────────────────────────
     report = generate_report(
-        stability_df=stability_df,
+        pooled_stability_df=pooled_stability_df,
+        grouped_stability_df=grouped_stability_df,
         results_df=results_df,
         residual_results=residual_results,
         stat_results=stat_results,
@@ -821,7 +912,10 @@ def run_experiment():
 
     return {
         "results_df": results_df,
-        "stability_df": stability_df,
+        "pooled_results_df": pooled_results_df,
+        "stability_df": pooled_stability_df,
+        "pooled_stability_df": pooled_stability_df,
+        "grouped_stability_df": grouped_stability_df,
         "residual_results": residual_results,
         "stat_results": stat_results,
         "uncertainty_metrics": uncertainty_metrics,
