@@ -63,14 +63,14 @@ def create_demand_features(sales_df: pd.DataFrame) -> pd.DataFrame:
             monthly.groupby(group_cols)["units_sold"].shift(lag)
         )
 
-    # Rolling features
+    # Rolling features (strictly past values: shift by 1 first)
     monthly["rolling_mean_3"] = (
         monthly.groupby(group_cols)["units_sold"]
-        .transform(lambda x: x.rolling(3, min_periods=1).mean())
+        .transform(lambda x: x.shift(1).rolling(3, min_periods=1).mean())
     )
     monthly["rolling_std_3"] = (
         monthly.groupby(group_cols)["units_sold"]
-        .transform(lambda x: x.rolling(3, min_periods=1).std())
+        .transform(lambda x: x.shift(1).rolling(3, min_periods=1).std())
     )
     monthly["rolling_std_3"] = monthly["rolling_std_3"].fillna(0)
 
